@@ -33,14 +33,11 @@ features:
 
 ## 🔔 订阅银枢局
 
-第一时间收到高质量内容，不错过任何洞察。
+不想错过每日高质量内容？
 
-<form class="newsletter-form" action="#" method="post">
-  <input type="email" placeholder="输入邮箱订阅" required />
-  <button type="submit">订阅</button>
-</form>
+关注微信公众号「**银枢局**」，回复「订阅」加入每日推送，文章第一时间送达。
 
-*订阅后每周收到一次精选内容推送，可随时退订。*
+> 📱 微信内搜索：银枢局，或扫描下方二维码
 
 ---
 
@@ -48,8 +45,8 @@ features:
 
 <div class="posts-grid">
   <a href="/posts/" class="post-card">
-    <span class="post-category">棱镜</span>
+    <span class="post-category">专栏</span>
     <h3>查看全部文章 →</h3>
-    <p>技术深度 · 产品思维 · 持续更新</p>
+    <p>棱镜 · 朝鉴 · 持续更新</p>
   </a>
 </div>
