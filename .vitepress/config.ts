@@ -26,17 +26,19 @@ export default defineConfig({
         items: [
           { text: '📐 棱镜 · 技术', link: '/categories/prism' },
           { text: '🔭 朝鉴 · 趋势洞察', link: '/categories/chaojian' },
+          { text: '🔥 毒舌晚报', link: '/categories/dushe' },
         ],
       },
       { text: '🛠️ AI工具', link: '/tools/' },
+      { text: '📱 订阅', link: '/subscribe/' },
       { text: '关于', link: '/about/' },
-      { text: '友链', link: '/links/' },
     ],
 
     sidebar: 'auto',
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vonmrs' },
+      { text: '公众号', link: 'https://mp.weixin.qq.com/', target: '_blank' },
     ],
 
     footer: {
