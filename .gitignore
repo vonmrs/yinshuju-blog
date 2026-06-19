@@ -1,5 +1,12 @@
+# 排除 node_modules
 node_modules
-dist
-.cache
+
+# 排除 VitePress 内部构建目录
+.vitepress/cache
+.vitepress/dist
+
+# 排除 macOS 系统文件
 .DS_Store
+
+# 排除日志
 *.log
