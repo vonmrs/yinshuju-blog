@@ -1,25 +1,55 @@
 ---
 layout: home
+
 hero:
   name: 银枢局
   text: Design · Code · Think
-  tagline: 全栈技术 · 产品思维 · 职场成长
+  tagline: 全栈技术 · 产品思维 · AI工具 · 职场成长
   actions:
     - theme: brand
-      text: 开始阅读
+      text: 浏览文章
       link: /posts/
     - theme: alt
-      text: 关于我
-      link: /about/
+      text: AI工具集
+      link: /tools/
+
 features:
-  - title: 📐 棱镜
-    details: 技术深度剖析，透过代码看本质。前端架构、后端设计、AI 工程化。
-  - title: 🔭 朝鉴
+  - icon: 📐
+    title: 棱镜 · 技术
+    details: 前端架构、后端设计、AI 工程化。透过代码看本质。
+    link: /categories/prism
+    linkText: 阅读技术文章
+  - icon: 🔭
+    title: 朝鉴 · 趋势洞察
     details: 新闻背后的经济信号与机会窗口。每天一条，看懂趋势。
-  - title: 🔥 毒舌晚报
-    details: 科技圈的冷眼旁观，不吹不黑，只说真话。
+    link: /categories/chaojian
+    linkText: 探索趋势
+  - icon: 🛠️
+    title: AI 工具集
+    details: 银枢局出品的免费在线工具，让 AI 成为你的生产力杠杆。
+    link: /tools/
+    linkText: 使用工具
 ---
 
-## 最新文章
+## 🔔 订阅银枢局
 
-<!-- 此处将动态替换为最新文章列表 -->
+第一时间收到高质量内容，不错过任何洞察。
+
+<form class="newsletter-form" action="#" method="post">
+  <input type="email" placeholder="输入邮箱订阅" required />
+  <button type="submit">订阅</button>
+</form>
+
+*订阅后每周收到一次精选内容推送，可随时退订。*
+
+---
+
+## 📖 最新文章
+
+<div class="posts-grid">
+  <a href="/posts/" class="post-card">
+    <span class="post-category">棱镜</span>
+    <h3>查看全部文章 →</h3>
+    <p>技术深度 · 产品思维 · 持续更新</p>
+  </a>
+</div>
