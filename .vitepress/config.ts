@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'zh-CN',
   title: '银枢局',
-  titleTemplate: '%s · 银枢局',
+  titleTemplate: ':pageTitle · 银枢局',
   description: '全栈技术 · 产品思维 · AI工具 · 职场成长',
 
   head: [
