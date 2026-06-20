@@ -1,5 +1,8 @@
 <template>
   <Layout>
+    <template #layout-top>
+      <ReadingProgress />
+    </template>
     <template #nav-bar-content-after>
       <PagefindSearch />
     </template>
@@ -8,6 +11,9 @@
     </template>
     <template #doc-after>
       <Giscus />
+      <SocialShare />
+      <RelatedArticles />
+      <ViewCount />
     </template>
   </Layout>
 </template>
@@ -16,6 +22,10 @@
 import DefaultTheme from 'vitepress/theme'
 import Giscus from './Giscus.vue'
 import PagefindSearch from './PagefindSearch.vue'
+import ReadingProgress from './ReadingProgress.vue'
+import SocialShare from './SocialShare.vue'
+import RelatedArticles from './RelatedArticles.vue'
+import ViewCount from './ViewCount.vue'
 import { ref } from 'vue'
 
 const { Layout } = DefaultTheme
@@ -24,11 +34,10 @@ const showSearch = ref(false)
 
 const toggleSearch = () => {
   showSearch.value = !showSearch.value
-  if (showSearch.value) {
-    // 显示搜索框
-    const searchEl = document.getElementById('pagefind-search')
-    if (searchEl) {
-      searchEl.style.display = 'block'
+  const searchEl = document.getElementById('pagefind-search')
+  if (searchEl) {
+    searchEl.style.display = showSearch.value ? 'block' : 'none'
+    if (showSearch.value) {
       searchEl.style.position = 'fixed'
       searchEl.style.top = '60px'
       searchEl.style.left = '10px'
@@ -38,11 +47,6 @@ const toggleSearch = () => {
       searchEl.style.padding = '1rem'
       searchEl.style.borderRadius = '8px'
       searchEl.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)'
-    }
-  } else {
-    const searchEl = document.getElementById('pagefind-search')
-    if (searchEl) {
-      searchEl.style.display = 'none'
     }
   }
 }

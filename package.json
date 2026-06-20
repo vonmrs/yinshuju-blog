@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs": "vitepress dev .",
-    "build": "vitepress build . && pagefind --site .vitepress/dist --output-subdir pagefind",
+    "build": "vitepress build . && node scripts/generate-meta.cjs && pagefind --site .vitepress/dist --output-subdir pagefind",
     "preview": "vitepress preview ."
   },
   "keywords": [],
