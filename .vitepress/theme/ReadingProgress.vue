@@ -16,11 +16,8 @@ const progress = ref(0)
 const showBackToTop = ref(false)
 
 function updateProgress() {
-  const article = document.querySelector('.VPContentDoc')
-  if (!article) return
-  
   const scrollTop = window.scrollY
-  const docHeight = article.scrollHeight - window.innerHeight
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight
   const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
   
   progress.value = Math.min(100, Math.max(0, progress))
@@ -49,13 +46,13 @@ onUnmounted(() => {
   width: 100%;
   height: 3px;
   z-index: 9998;
-  pointer-events: none;
 }
 
 .progress-bar {
   height: 100%;
   background: linear-gradient(90deg, var(--inzu-gold), var(--inzu-jade));
   transition: width 0.1s ease-out;
+  pointer-events: none;
 }
 
 .back-to-top {

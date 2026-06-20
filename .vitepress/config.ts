@@ -64,6 +64,7 @@ export default defineConfig({
       },
       { text: '🛠️ AI工具', link: '/tools/' },
       { text: '📱 订阅', link: '/subscribe/' },
+      { text: '搜索', link: '/search/' },
       { text: '关于', link: '/about/' },
     ],
 

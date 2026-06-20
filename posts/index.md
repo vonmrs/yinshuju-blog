@@ -4,406 +4,248 @@ title: 文章列表
 
 # 📝 全部文章
 
-共 39 篇文章
-
-## 📐 棱镜 · 19 篇
-
-<div class="post-list">
-
-<a href="/posts/prism/prism-2026-05-31/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-05-31</span>
+<div id="article-list-app">
+  <!-- 统计和工具栏 -->
+  <div class="toolbar">
+    <div class="filter-group">
+      <button class="filter-btn active" data-tag="all">全部 (<span id="total-count">-</span>)</button>
+      <button class="filter-btn" data-tag="prism">📐 棱镜 (<span id="prism-count">-</span>)</button>
+      <button class="filter-btn" data-tag="zhaojian">🔭 朝鉴 (<span id="zhaojian-count">-</span>)</button>
     </div>
-    <div class="post-title">AI圈本周集体高潮，但大部分还是PPT发布会</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-19/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-19</span>
+    <div class="sort-group">
+      <select id="sort-select" class="sort-select">
+        <option value="date-desc">最新</option>
+        <option value="date-asc">最早</option>
+        <option value="title-asc">标题 A-Z</option>
+      </select>
     </div>
-    <div class="post-title">📋 今日十条</div>
   </div>
-</a>
 
-<a href="/posts/prism/prism-2026-06-18/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-18</span>
-    </div>
-    <div class="post-title">Vol.2026-06-18 | 技术下午茶</div>
+  <!-- 文章列表容器 -->
+  <div id="posts-container" class="articles-container">
+    <p>加载中...</p>
   </div>
-</a>
 
-<a href="/posts/prism/prism-2026-06-17/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-17</span>
-    </div>
-    <div class="post-title">🤖 AI 前线</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-16/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-16</span>
-    </div>
-    <div class="post-title">【AI前沿】美国政府封禁Claude新模型</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-15/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-15</span>
-    </div>
-    <div class="post-title">🤖 AI前沿</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-14/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-14</span>
-    </div>
-    <div class="post-title">🔮 AI前沿：从奢侈品到日用品的革命</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-13/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-13</span>
-    </div>
-    <div class="post-title">AI大模型前沿：当百模大战变成Agent绞肉机</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-12/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-12</span>
-    </div>
-    <div class="post-title">🔮 AI前沿：幻觉与现实的拉锯</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-11/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-11</span>
-    </div>
-    <div class="post-title">AI前沿：炒概念比落地快</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-10/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-10</span>
-    </div>
-    <div class="post-title">一、AI前沿</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-09/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-09</span>
-    </div>
-    <div class="post-title">🤖 AI前沿</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-08/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-08</span>
-    </div>
-    <div class="post-title">🐲 龙虾点评：国产大模型杀疯了</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-07/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-07</span>
-    </div>
-    <div class="post-title">机器吃人：AI 流量首超人类</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-06/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-06</span>
-    </div>
-    <div class="post-title">词元出海：中国AI的数字丝绸之路</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-05/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-05</span>
-    </div>
-    <div class="post-title">人形机器人：一场资本催熟的视觉奇观</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-04/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-04</span>
-    </div>
-    <div class="post-title">AI军备竞赛：从炼丹到炼金的荒诞转型</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-03/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-03</span>
-    </div>
-    <div class="post-title">AI & 前沿</div>
-  </div>
-</a>
-
-<a href="/posts/prism/prism-2026-06-02/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge prism">棱镜</span>
-      <span>2026-06-02</span>
-    </div>
-    <div class="post-title">AI Agent 工具链大爆发</div>
-  </div>
-</a>
-
+  <!-- 分页 -->
+  <div id="pagination" class="pagination-app"></div>
 </div>
 
-## 🔭 朝鉴 · 20 篇
+<script>
+(function() {
+  if (typeof window === 'undefined') return;
 
-<div class="post-list">
+  let allPosts = [];
+  let filteredPosts = [];
+  let currentPage = 1;
+  const postsPerPage = 15;
+  let currentFilter = 'all';
+  let currentSort = 'date-desc';
 
-<a href="/posts/zhaojian/zhaojian-2026-06-20/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-20</span>
-    </div>
-    <div class="post-title">2026年6月20日</div>
-  </div>
-</a>
+  async function loadPosts() {
+    try {
+      const res = await fetch('/posts-meta.json');
+      allPosts = await res.json();
+      filteredPosts = [...allPosts];
 
-<a href="/posts/zhaojian/zhaojian-2026-06-19/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-19</span>
-    </div>
-    <div class="post-title">2026年6月19日</div>
-  </div>
-</a>
+      // 更新统计
+      document.getElementById('total-count').textContent = allPosts.length;
+      document.getElementById('prism-count').textContent = allPosts.filter(p => p.category === 'prism').length;
+      document.getElementById('zhaojian-count').textContent = allPosts.filter(p => p.category === 'zhaojian').length;
 
-<a href="/posts/zhaojian/zhaojian-2026-06-18/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-18</span>
-    </div>
-    <div class="post-title">2026年6月18日</div>
-  </div>
-</a>
+      renderPosts();
+    } catch (e) {
+      console.error('加载文章失败:', e);
+    }
+  }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-17/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-17</span>
-    </div>
-    <div class="post-title">2026年6月17日</div>
-  </div>
-</a>
+  function renderPosts() {
+    const container = document.getElementById('posts-container');
+    if (!container) return;
 
-<a href="/posts/zhaojian/zhaojian-2026-06-16/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-16</span>
-    </div>
-    <div class="post-title">2026年6月16日</div>
-  </div>
-</a>
+    sortPosts();
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+    const start = (currentPage - 1) * postsPerPage;
+    const pagePosts = filteredPosts.slice(start, start + postsPerPage);
 
-<a href="/posts/zhaojian/zhaojian-2026-06-15/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-15</span>
-    </div>
-    <div class="post-title">2026年6月15日</div>
-  </div>
-</a>
+    if (pagePosts.length === 0) {
+      container.innerHTML = '<div class="empty-state"><p>暂无符合条件的文章</p></div>';
+    } else {
+      container.innerHTML = pagePosts.map(post => {
+        const categoryLabel = post.category === 'prism' ? '棱镜' : '朝鉴';
+        const badgeClass = post.category === 'prism' ? 'badge-prism' : 'badge-zhaojian';
+        const excerpt = post.excerpt ? post.excerpt.substring(0, 100) + '...' : '';
 
-<a href="/posts/zhaojian/zhaojian-2026-06-13/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-13</span>
-    </div>
-    <div class="post-title">2026年6月13日</div>
-  </div>
-</a>
+        return `
+        <a href="${post.url}" class="article-card">
+          <div class="article-meta">
+            <span class="article-badge ${badgeClass}">${categoryLabel}</span>
+            <span class="article-date">${formatDate(post.date)}</span>
+          </div>
+          <div class="article-title">${post.title}</div>
+          <div class="article-excerpt">${excerpt}</div>
+        </a>`;
+      }).join('');
+    }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-12/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-12</span>
-    </div>
-    <div class="post-title">2026年6月12日</div>
-  </div>
-</a>
+    renderPagination(totalPages);
+  }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-11/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-11</span>
-    </div>
-    <div class="post-title">2026年6月11日</div>
-  </div>
-</a>
+  function sortPosts() {
+    switch (currentSort) {
+      case 'date-desc': filteredPosts.sort((a, b) => b.date.localeCompare(a.date)); break;
+      case 'date-asc': filteredPosts.sort((a, b) => a.date.localeCompare(b.date)); break;
+      case 'title-asc': filteredPosts.sort((a, b) => a.title.localeCompare(b.title, 'zh-CN')); break;
+    }
+  }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-10/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-10</span>
-    </div>
-    <div class="post-title">2026年6月10日</div>
-  </div>
-</a>
+  function renderPagination(totalPages) {
+    const pag = document.getElementById('pagination');
+    if (!pag || totalPages <= 1) { pag.innerHTML = ''; return; }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-09/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-09</span>
-    </div>
-    <div class="post-title">2026年6月9日</div>
-  </div>
-</a>
+    let html = `<button ${currentPage <= 1 ? 'disabled' : ''} onclick="window.__articleGoTo(1)">«</button>`;
+    html += `<button ${currentPage <= 1 ? 'disabled' : ''} onclick="window.__articleGoTo(${currentPage - 1})">‹</button>`;
+    html += `<span class="page-info">${currentPage} / ${totalPages}</span>`;
+    html += `<button ${currentPage >= totalPages ? 'disabled' : ''} onclick="window.__articleGoTo(${currentPage + 1})">›</button>`;
+    html += `<button ${currentPage >= totalPages ? 'disabled' : ''} onclick="window.__articleGoTo(${totalPages})">»</button>`;
+    pag.innerHTML = html;
+  }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-08/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-08</span>
-    </div>
-    <div class="post-title">2026年6月8日</div>
-  </div>
-</a>
+  window.__articleGoTo = function(page) {
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    renderPosts();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-<a href="/posts/zhaojian/zhaojian-2026-06-07/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-07</span>
-    </div>
-    <div class="post-title">2026年6月7日</div>
-  </div>
-</a>
+  function formatDate(d) {
+    const date = new Date(d);
+    return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+  }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-06/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-06</span>
-    </div>
-    <div class="post-title">2026年6月6日</div>
-  </div>
-</a>
+  function applyFilter(tag) {
+    currentFilter = tag;
+    currentPage = 1;
+    if (tag === 'all') filteredPosts = [...allPosts];
+    else filteredPosts = allPosts.filter(p => p.category === tag);
+    renderPosts();
+  }
 
-<a href="/posts/zhaojian/zhaojian-2026-06-05/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-05</span>
-    </div>
-    <div class="post-title">2026年6月5日</div>
-  </div>
-</a>
+  document.addEventListener('DOMContentLoaded', () => {
+    loadPosts();
 
-<a href="/posts/zhaojian/zhaojian-2026-06-04/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-04</span>
-    </div>
-    <div class="post-title">2026年6月4日</div>
-  </div>
-</a>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.dataset.tag);
+      });
+    });
 
-<a href="/posts/zhaojian/zhaojian-2026-06-03/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-03</span>
-    </div>
-    <div class="post-title">2026年6月3日</div>
-  </div>
-</a>
+    document.getElementById('sort-select')?.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      currentPage = 1;
+      renderPosts();
+    });
+  });
+})();
+</script>
 
-<a href="/posts/zhaojian/zhaojian-2026-06-02/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-02</span>
-    </div>
-    <div class="post-title">2026年6月2日</div>
-  </div>
-</a>
+<style>
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
 
-<a href="/posts/zhaojian/zhaojian-2026-06-01/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-06-01</span>
-    </div>
-    <div class="post-title">2026年6月1日</div>
-  </div>
-</a>
+.article-card {
+  display: block;
+  padding: 1rem 1.25rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
 
-<a href="/posts/zhaojian/zhaojian-2026-05-31/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge zhaojian">朝鉴</span>
-      <span>2026-05-31</span>
-    </div>
-    <div class="post-title">2026年5月31日</div>
-  </div>
-</a>
+.article-card:hover {
+  border-color: var(--inzu-gold);
+  transform: translateX(4px);
+}
 
-</div>
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.article-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.badge-prism {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--inzu-gold);
+}
+
+.badge-zhaojian {
+  background: rgba(90, 141, 163, 0.15);
+  color: var(--inzu-jade);
+}
+
+.article-date {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+
+.article-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.article-excerpt {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.pagination-app button {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 2.2rem;
+  font-size: 0.85rem;
+}
+
+.pagination-app button:hover:not(:disabled) {
+  border-color: var(--inzu-gold);
+  color: var(--inzu-gold);
+}
+
+.pagination-app button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+:root:not(.dark) .article-card { background: var(--vp-c-bg-elv); }
+:root:not(.dark) .article-title { color: var(--inzu-ink); }
+</style>

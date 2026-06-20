@@ -71,26 +71,20 @@ title: 关于银枢局
 
 <style>
 .about-intro {
-  background: var(--inzu-parchment-dark);
+  background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   line-height: 1.9;
-  color: var(--inzu-silver-300);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
+  color: var(--vp-c-text-2);
 }
 
 th, td {
   text-align: left;
   padding: 0.6rem 1rem;
   border-bottom: 1px solid var(--vp-c-divider);
-  color: var(--inzu-silver-300);
+  color: var(--vp-c-text-2);
   font-size: 0.9rem;
 }
 
@@ -103,7 +97,7 @@ th {
   text-align: center;
   margin: 2rem 0;
   padding: 1.5rem;
-  background: var(--inzu-parchment-dark);
+  background: var(--vp-c-bg-soft);
   border-radius: 12px;
   border: 1px solid var(--vp-c-divider);
 }
@@ -115,7 +109,7 @@ th {
 }
 
 .contact-qrcode p {
-  color: var(--inzu-silver-500);
+  color: var(--vp-c-text-3);
   font-size: 0.85rem;
   margin: 0;
 }

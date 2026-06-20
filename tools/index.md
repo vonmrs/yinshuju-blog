@@ -11,27 +11,102 @@ title: AI 工具集
 
 ## 🔧 开发工具
 
-| 工具 | 状态 | 说明 |
-|------|------|------|
-| JSON 格式化器 | 🚧 即将上线 | 美化、校验、压缩 JSON |
-| 正则表达式测试 | 🚧 即将上线 | 实时匹配，高亮捕获组 |
-| 颜色转换器 | 🚧 即将上线 | HEX / RGB / HSL 互转 |
-| UUID 生成器 | 🚧 即将上线 | 一键生成各种 UUID |
+<div class="tools-grid">
+
+<div class="tool-card">
+  <div class="tool-icon">🖥️</div>
+  <div class="tool-body">
+    <h3 class="tool-name">JSON 格式化器</h3>
+    <p class="tool-desc">美化、校验、压缩 JSON 数据</p>
+    <span class="tool-badge badge-coming">即将上线</span>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="tool-icon">🔤</div>
+  <div class="tool-body">
+    <h3 class="tool-name">正则表达式测试</h3>
+    <p class="tool-desc">实时匹配，高亮捕获组</p>
+    <span class="tool-badge badge-coming">即将上线</span>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="tool-icon">🎨</div>
+  <div class="tool-body">
+    <h3 class="tool-name">颜色转换器</h3>
+    <p class="tool-desc">HEX / RGB / HSL 互转</p>
+    <span class="tool-badge badge-coming">即将上线</span>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="tool-icon">🔑</div>
+  <div class="tool-body">
+    <h3 class="tool-name">UUID 生成器</h3>
+    <p class="tool-desc">一键生成各种 UUID</p>
+    <span class="tool-badge badge-coming">即将上线</span>
+  </div>
+</div>
+
+</div>
 
 ## 🤖 AI 工具
 
-| 工具 | 状态 | 说明 |
-|------|------|------|
-| 提示词库 | 🚧 即将上线 | 精选 AI 提示词模板 |
-| 生图提示词生成器 | 🚧 规划中 | 通义万相 / Midjourney 提示词 |
-| 小红书爆款标题生成 | 🚧 规划中 | AI 辅助创作 |
+<div class="tools-grid">
+
+<div class="tool-card">
+  <div class="tool-icon">💬</div>
+  <div class="tool-body">
+    <h3 class="tool-name">提示词库</h3>
+    <p class="tool-desc">精选 AI 提示词模板</p>
+    <span class="tool-badge badge-planning">规划中</span>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="tool-icon">🎯</div>
+  <div class="tool-body">
+    <h3 class="tool-name">生图提示词生成器</h3>
+    <p class="tool-desc">通义万相 / Midjourney 提示词</p>
+    <span class="tool-badge badge-planning">规划中</span>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="tool-icon">🔥</div>
+  <div class="tool-body">
+    <h3 class="tool-name">小红书爆款标题生成</h3>
+    <p class="tool-desc">AI 辅助创作</p>
+    <span class="tool-badge badge-planning">规划中</span>
+  </div>
+</div>
+
+</div>
 
 ## 📊 效率工具
 
-| 工具 | 状态 | 说明 |
-|------|------|------|
-| 番茄钟 | 🚧 规划中 | 专注计时 + 统计 |
-| 短链生成器 | 🚧 规划中 | 缩短链接 + 点击统计 |
+<div class="tools-grid">
+
+<div class="tool-card">
+  <div class="tool-icon">⏰</div>
+  <div class="tool-body">
+    <h3 class="tool-name">番茄钟</h3>
+    <p class="tool-desc">专注计时 + 统计</p>
+    <span class="tool-badge badge-planning">规划中</span>
+  </div>
+</div>
+
+<div class="tool-card">
+  <div class="tool-icon">🔗</div>
+  <div class="tool-body">
+    <h3 class="tool-name">短链生成器</h3>
+    <p class="tool-desc">缩短链接 + 点击统计</p>
+    <span class="tool-badge badge-planning">规划中</span>
+  </div>
+</div>
+
+</div>
 
 ---
 
@@ -42,3 +117,70 @@ title: AI 工具集
 ::: tip
 所有工具均为银枢局自建，不依赖第三方数据，安全隐私。
 :::
+
+<style>
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tool-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: all 0.25s;
+}
+
+.tool-card:hover {
+  border-color: var(--inzu-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.tool-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tool-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tool-name {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin: 0 0 0.3rem !important;
+}
+
+.tool-desc {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  margin: 0 0 0.6rem !important;
+}
+
+.tool-badge {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.badge-coming {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--inzu-gold);
+}
+
+.badge-planning {
+  background: rgba(132, 125, 110, 0.15);
+  color: var(--vp-c-text-2);
+}
+</style>
