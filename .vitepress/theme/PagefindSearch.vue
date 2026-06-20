@@ -1,53 +1,70 @@
 <template>
-  <div id="pagefind-search" class="pagefind-search"></div>
+  <div class="pagefind-search-wrapper">
+    <input
+      ref="inputRef"
+      type="text"
+      class="nav-search-input"
+      placeholder="搜索..."
+      @keydown.enter="doSearch"
+      @input="onInput"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { ref } from 'vue'
 
-onMounted(() => {
-  if (typeof window !== 'undefined') {
-    // 动态加载 Pagefind UI
-    const script = document.createElement('script')
-    script.src = '/pagefind/pagefind-ui.js'
-    script.onload = () => {
-      const PagefindUI = (window as any).PagefindUI
-      if (PagefindUI) {
-        new PagefindUI({
-          element: '#pagefind-search',
-          showImages: false,
-          showSubResults: true,
-          translations: {
-            placeholder: '搜索文章...',
-            zero_results: '没有找到 [SEARCH_TERM] 相关内容',
-            many_results: '找到 [COUNT] 个结果',
-            one_result: '找到 1 个结果',
-            alt_search: '查看 [SEARCH_TERM] 的结果',
-            search_suggestion: '搜索 [SEARCH_TERM]',
-            searching: '正在搜索 [SEARCH_TERM]...'
-          }
-        })
-      }
+const inputRef = ref<HTMLInputElement | null>(null)
+let timer: ReturnType<typeof setTimeout>
+
+function onInput() {
+  clearTimeout(timer)
+  timer = setTimeout(() => {
+    const q = inputRef.value?.value.trim()
+    if (q) {
+      window.location.href = `/search/?q=${encodeURIComponent(q)}`
     }
-    document.body.appendChild(script)
+  }, 600)
+}
 
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = '/pagefind/pagefind-ui.css'
-    document.head.appendChild(link)
+function doSearch() {
+  const q = inputRef.value?.value.trim()
+  if (q) {
+    window.location.href = `/search/?q=${encodeURIComponent(q)}`
   }
-})
+}
 </script>
 
-<style>
-.pagefind-search {
-  min-width: 180px;
-  max-width: 280px;
+<style scoped>
+.pagefind-search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-input {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+  width: 160px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.nav-search-input::placeholder {
+  color: var(--vp-c-text-3);
+}
+
+.nav-search-input:focus {
+  border-color: var(--inzu-gold);
+  width: 220px;
 }
 
 @media (max-width: 768px) {
-  .pagefind-search {
-    max-width: 100%;
+  .pagefind-search-wrapper {
+    display: none;
   }
 }
 </style>

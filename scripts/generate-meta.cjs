@@ -91,8 +91,9 @@ function generateMeta() {
     if (!fm.title || !fm.date) continue
     
     // 计算 URL
+    // 计算 URL（注意：relativePath 已经是相对于 posts 目录的路径）
     const relativePath = path.relative(POSTS_DIR, postPath)
-    const url = '/' + relativePath.replace(/\.md$/, '/').replace(/\\/g, '/')
+    const url = '/posts/' + relativePath.replace(/\.md$/, '/').replace(/\\/g, '/')
     
     // 获取分类（取第一个）
     let category = ''
