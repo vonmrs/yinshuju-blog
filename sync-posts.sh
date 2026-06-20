@@ -147,13 +147,20 @@ push_to_github() {
     return 0
   fi
   
+  # 检查环境变量
+  if [ -z "$GITHUB_PAT" ]; then
+    echo "[$(date '+%H:%M:%S')] ❌ 错误: 未设置 GITHUB_PAT 环境变量"
+    echo "请在 ~/.zshrc 或 ~/.bash_profile 中添加:\n    export GITHUB_PAT='your_token_here'"
+    exit 1
+  fi
+  
   log "构建并推送..."
   npm run build > /dev/null 2>&1
   cp -r .vitepress/dist/* .
   
   git add .
   git commit -m "sync: $(date '+%Y-%m-%d %H:%M') 新文章同步" > /dev/null 2>&1
-  git push https://github.com/vonmrs/yinshuju-blog.git main > /dev/null 2>&1
+  git push https://$GITHUB_PAT@github.com/vonmrs/yinshuju-blog.git main > /dev/null 2>&1
   
   log "推送完成！网站将在 1-2 分钟内更新"
 }
