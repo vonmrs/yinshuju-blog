@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.Bogozrur.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"categories/dushe.md","filePath":"categories/dushe.md"}'),s={name:"categories/dushe.md"};function r(o,c,n,d,i,p){return t(),a("div")}const f=e(s,[["render",r]]);export{m as __pageData,f as default};
