@@ -42,10 +42,13 @@ title: 文章列表
   let currentSort = 'date-desc';
 
   async function loadPosts() {
+    console.log('[posts-index] 开始加载文章列表...');
     try {
-      const res = await fetch('/posts-meta.json');
+      const res = await fetch('/posts-meta.json?t=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       allPosts = await res.json();
       filteredPosts = [...allPosts];
+      console.log('[posts-index] 成功加载', allPosts.length, '篇文章');
 
       // 更新统计
       document.getElementById('total-count').textContent = allPosts.length;
@@ -54,7 +57,11 @@ title: 文章列表
 
       renderPosts();
     } catch (e) {
-      console.error('加载文章失败:', e);
+      console.error('[posts-index] 加载文章失败:', e);
+      const container = document.getElementById('posts-container');
+      if (container) {
+        container.innerHTML = '<div class="empty-state"><p>文章加载失败，请刷新页面重试</p><p style="font-size:0.8rem;color:var(--vp-c-text-3);">' + e.message + '</p></div>';
+      }
     }
   }
 
