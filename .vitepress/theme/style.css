@@ -1,7 +1,7 @@
-/* ================================================
+/* ===============================================
    银枢局 · 品牌定制主题
    基于品牌视觉规范 v3
-   ================================================ */
+   =============================================== */
 
 /* 品牌色系 */
 :root {
@@ -273,15 +273,96 @@
   color: var(--inzu-gold) !important;
 }
 
-/* ===== 目录 ===== */
-.VPDocAsideOutline .root .outline-link {
-  color: var(--inzu-silver-500) !important;
-  font-size: 0.85rem;
+/* ===== TOC 目录美化 ===== */
+.VPDocAsideOutline {
+  padding: 0.8rem !important;
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.VPDocAsideOutline .outline-title {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  margin-bottom: 0.8rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPDocOutlineItem .root {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.VPDocOutlineItem .root li {
+  position: relative;
+  padding: 0.35rem 0.5rem !important;
+  padding-left: 0.8rem !important;
+  margin: 0.2rem 0 !important;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.VPDocOutlineItem .root li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--inzu-gold);
+  border-radius: 2px;
+  transition: height 0.2s;
+}
+
+.VPDocOutlineItem .root li:hover {
+  background: var(--vp-c-bg-mute);
+}
+
+.VPDocOutlineItem .root li:hover::before {
+  height: 60%;
+}
+
+.VPDocOutlineItem .root li.active {
+  background: rgba(201, 168, 76, 0.1) !important;
+}
+
+.VPDocOutlineItem .root li.active::before {
+  height: 80% !important;
+  background: var(--inzu-gold) !important;
+}
+
+.VPDocOutlineItem .root li a {
+  font-size: 0.8rem !important;
+  color: var(--vp-c-text-2) !important;
+  line-height: 1.4 !important;
   transition: color 0.2s;
 }
-.VPDocAsideOutline .root .outline-link:hover,
-.VPDocAsideOutline .root .outline-link.active {
+
+.VPDocOutlineItem .root li:hover a {
   color: var(--inzu-gold) !important;
+}
+
+.VPDocOutlineItem .root li.active a {
+  color: var(--inzu-gold) !important;
+  font-weight: 500 !important;
+}
+
+/* 二级标题（H2）*/
+.VPDocOutlineItem .root > li {
+  padding-left: 0.5rem !important;
+}
+
+/* 三级标题（H3）*/
+.VPDocOutlineItem .root > li > ul > li {
+  padding-left: 1.2rem !important;
+  font-size: 0.78rem !important;
+}
+
+.VPDocOutlineItem .root > li > ul > li a {
+  font-size: 0.78rem !important;
 }
 
 /* ===== Footer ===== */
