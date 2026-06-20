@@ -48,7 +48,7 @@ sync_zhaojian() {
     [ -z "$title_date" ] && title_date="$date"
     
     # 提取描述
-    local desc=$(echo "$content" | grep -oP '(?<=### \d+\. ).*' | head -1)
+    local desc=$(echo "$content" | grep -E '^### [0-9]+\.' | head -1 | sed 's/^### [0-9]*\. //')
     [ -z "$desc" ] && desc="朝闻天下，鉴往知来。"
     
     # 清理描述中的特殊字符
@@ -107,7 +107,7 @@ sync_prism() {
     fi
     
     local content=$(cat "$src_file")
-    local title=$(echo "$content" | grep -oP '(?<=## ).*' | head -1 | cut -c1-80)
+    local title=$(echo "$content" | grep -E '^## ' | head -1 | sed 's/^## //' | cut -c1-80)
     [ -z "$title" ] && title="技术深度分析"
     
     # 清理标题中的特殊字符
