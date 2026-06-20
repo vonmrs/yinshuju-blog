@@ -21,7 +21,7 @@ const { Layout } = DefaultTheme
 /* 调整搜索框在导航栏中的位置 */
 @media (max-width: 768px) {
   .pagefind-search {
-    display: none;
+    display: none !important;
   }
 }
 </style>

@@ -581,3 +581,54 @@
   .qrcode-row { flex-direction: column; }
   .cta-text p { text-align: center !important; }
 }
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+  /* 导航栏 */
+  .VPNavBar {
+    padding: 0 1rem;
+  }
+
+  /* Hero 区域 */
+  .VPHero .name {
+    font-size: 2.5rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  .VPHero .text {
+    font-size: 1rem !important;
+  }
+
+  /* Features 网格 */
+  .VPFeatures {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 文章列表 */
+  .post-list-item {
+    padding: 0.8rem 0.5rem;
+  }
+  .post-title {
+    font-size: 0.95rem !important;
+  }
+
+  /* 首页订阅区 */
+  .subscribe-cta {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPHero .name {
+    font-size: 2rem !important;
+  }
+  .VPFeatures {
+    gap: 0.8rem;
+  }
+  .post-list-item {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .post-meta {
+    font-size: 0.75rem;
+  }
+}
