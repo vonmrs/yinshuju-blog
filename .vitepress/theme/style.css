@@ -17,8 +17,35 @@
   --inzu-jade: #5A8DA3;
 }
 
-/* 暗色主题（默认） */
+/* ===== 亮色主题（VitePress 默认行为） ===== */
 :root {
+  --vp-c-bg: #F5F3EE;
+  --vp-c-bg-soft: #E8E5DB;
+  --vp-c-bg-mute: #D1CCBF;
+  --vp-c-bg-elv: #FFFFFF;
+  --vp-c-text-1: #0C0B09;
+  --vp-c-text-2: #1A1812;
+  --vp-c-text-3: #5E584C;
+  --vp-c-brand-1: #BF3B2E;
+  --vp-c-brand-2: #9E2F24;
+  --vp-c-brand-soft: rgba(191, 59, 46, 0.1);
+  --vp-c-divider: rgba(12, 11, 9, 0.1);
+  --vp-c-border: rgba(12, 11, 9, 0.12);
+  --vp-c-gutter: #E8E5DB;
+  --vp-code-bg: #E8E5DB;
+  --vp-code-color: #BF3B2E;
+
+  /* 字体 */
+  --vp-font-family-base: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* 滚动条 */
+  scrollbar-width: thin;
+  scrollbar-color: var(--inzu-silver-500) transparent;
+}
+
+/* ===== 暗色主题 (html.dark) ===== */
+html.dark {
   --vp-c-bg: var(--inzu-ink);
   --vp-c-bg-soft: var(--inzu-parchment-dark);
   --vp-c-bg-mute: var(--inzu-parchment-mid);
@@ -33,10 +60,6 @@
   --vp-c-divider: rgba(212, 204, 191, 0.12);
   --vp-c-gutter: var(--inzu-parchment-dark);
   --vp-c-border: rgba(212, 204, 191, 0.15);
-
-  /* 字体 */
-  --vp-font-family-base: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* 代码块 */
   --vp-code-bg: var(--inzu-parchment-mid);
@@ -482,33 +505,6 @@
 .post-card p {
   color: var(--inzu-silver-500) !important;
   font-size: 0.85rem;
-  margin: 0;
-}
-
-/* ===== 亮色主题覆盖 ===== */
-:root[class~="light"] {
-  --vp-c-bg: #F5F3EE;
-  --vp-c-bg-soft: #E8E5DB;
-  --vp-c-bg-mute: #D1CCBF;
-  --vp-c-bg-elv: #FFFFFF;
-  --vp-c-text-1: #0C0B09;
-  --vp-c-text-2: #1A1812;
-  --vp-c-text-3: #5E584C;
-  --vp-c-brand-1: #BF3B2E;
-  --vp-c-brand-2: #9E2F24;
-  --vp-c-brand-soft: rgba(191, 59, 46, 0.1);
-  --vp-c-divider: rgba(12, 11, 9, 0.1);
-  --vp-c-border: rgba(12, 11, 9, 0.12);
-}
-
-/* ===== 移动端适配 ===== */
-@media (max-width: 768px) {
-  .VPHero .name {
-    font-size: 2.2rem !important;
-    letter-spacing: 0.15em !important;
-  }
-  .newsletter-form {
-    flex-direction: column;
   }
   .vp-doc h1 { font-size: 1.6rem !important; }
   .vp-doc h2 { font-size: 1.2rem !important; }
