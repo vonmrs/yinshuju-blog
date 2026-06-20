@@ -25,7 +25,7 @@ export default defineConfig({
         text: '内容',
         items: [
           { text: '📐 棱镜 · 技术', link: '/categories/prism' },
-          { text: '🔭 朝鉴 · 趋势洞察', link: '/categories/chaojian' },
+          { text: '🔭 朝鉴 · 趋势洞察', link: '/categories/zhaojian' },
           { text: '🔥 毒舌晚报', link: '/categories/dushe' },
         ],
       },
