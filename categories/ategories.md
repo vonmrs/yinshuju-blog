@@ -21,7 +21,14 @@ title: 棱镜 · 技术深度
 
 ## 📝 最新技术文章
 
-<!-- 文章列表将通过 frontmatter 自动生成 -->
+<div class="posts-grid">
+<a href="/posts/prism/prism-2026-06-19/" class="post-card">
+  <div class="post-category">棱镜</div>
+  <h3>📋 今日十条</h3>
+  <p>2026-06-19 · 技术下午茶</p>
+</a>
+<!-- 更多文章卡片 -->
+</div>
 
 ---
 
@@ -36,45 +43,3 @@ title: 棱镜 · 技术深度
 </div>
 </div>
 </div>
-
-<style>
-.subscribe-cta {
-  background: var(--inzu-parchment-dark);
-  border: 1px solid rgba(201, 168, 76, 0.3);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.subscribe-cta h3 {
-  color: var(--inzu-gold) !important;
-  font-size: 1.1rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.subscribe-cta > p {
-  color: var(--inzu-silver-500);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.qrcode-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.cta-qr {
-  width: 100px;
-  border-radius: 8px;
-}
-
-.cta-text p {
-  color: var(--inzu-silver-300);
-  font-size: 0.9rem;
-  margin: 0.3rem 0;
-  text-align: left;
-}
-</style>
