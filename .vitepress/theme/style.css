@@ -709,3 +709,161 @@ html.dark {
     font-size: 0.75rem;
   }
 }
+
+/* ================================================
+   亮色模式覆盖：修正硬编码暗色变量
+   ================================================ */
+:root:not(.dark) .VPNav {
+  background: rgba(245, 243, 238, 0.92) !important;
+}
+
+:root:not(.dark) .VPNavBarTitle .title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .VPNavBarMenuLink {
+  color: var(--inzu-silver-500) !important;
+}
+
+:root:not(.dark) .VPHero {
+  background: var(--vp-c-bg) !important;
+}
+
+:root:not(.dark) .VPHero .name {
+  color: var(--inzu-ink) !important;
+  text-shadow: none !important;
+}
+
+:root:not(.dark) .VPHero .tagline {
+  color: var(--inzu-silver-500) !important;
+}
+
+:root:not(.dark) .VPFeature {
+  background: var(--vp-c-bg-elv) !important;
+}
+
+:root:not(.dark) .VPFeature .title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .VPFeature .details {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .vp-doc h1 { color: var(--inzu-ink) !important; }
+:root:not(.dark) .vp-doc h2 { color: var(--inzu-ink) !important; }
+:root:not(.dark) .vp-doc h3 { color: var(--inzu-seal) !important; }
+
+:root:not(.dark) .vp-doc p,
+:root:not(.dark) .content-body p {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .vp-doc code {
+  background: var(--vp-c-bg-mute) !important;
+  color: var(--inzu-seal) !important;
+}
+
+:root:not(.dark) .vp-doc div[class*="language-"] {
+  background: var(--vp-c-bg-soft) !important;
+}
+
+:root:not(.dark) .vp-doc blockquote {
+  background: var(--vp-c-bg-soft) !important;
+}
+
+:root:not(.dark) .vp-doc blockquote p {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .VPSidebar {
+  background: var(--vp-c-bg) !important;
+}
+
+:root:not(.dark) .VPFooter {
+  background: var(--vp-c-bg-soft) !important;
+}
+
+:root:not(.dark) .newsletter-form input {
+  background: var(--vp-c-bg-elv) !important;
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .post-card {
+  background: var(--vp-c-bg-elv) !important;
+}
+:root:not(.dark) .post-card h3 {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .post-title {
+  color: var(--inzu-ink) !important;
+}
+:root:not(.dark) .post-meta {
+  color: var(--inzu-silver-500) !important;
+}
+:root:not(.dark) .post-excerpt {
+  color: var(--inzu-silver-500) !important;
+}
+
+:root:not(.dark) .post-list-item .post-title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .post-card .post-title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .VPDocAsideOutline {
+  background: var(--vp-c-bg-soft) !important;
+}
+
+:root:not(.dark) .VPDocAsideOutline .outline-title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .VPDocOutlineItem .root li a {
+  color: var(--inzu-silver-500) !important;
+}
+
+:root:not(.dark) .social-share {
+  background: var(--vp-c-bg-soft) !important;
+}
+:root:not(.dark) .share-title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .related-articles {
+  background: var(--vp-c-bg-soft) !important;
+}
+:root:not(.dark) .related-title {
+  color: var(--inzu-ink) !important;
+}
+:root:not(.dark) .related-item {
+  background: var(--vp-c-bg-elv) !important;
+}
+:root:not(.dark) .related-post-title {
+  color: var(--inzu-ink) !important;
+}
+
+:root:not(.dark) .toolbar {
+  background: var(--vp-c-bg-soft) !important;
+}
+:root:not(.dark) .filter-btn {
+  background: var(--vp-c-bg-elv) !important;
+  color: var(--inzu-ink) !important;
+}
+:root:not(.dark) .sort-select {
+  background: var(--vp-c-bg-elv) !important;
+  color: var(--inzu-ink) !important;
+}
+  
+:root:not(.dark) .VPFlyout .menu {
+  background: var(--vp-c-bg-elv) !important;
+}
+:root:not(.dark) .VPMenu {
+  background: var(--vp-c-bg-elv) !important;
+}
+:root:not(.dark) .VPMenuLink a {
+  color: var(--inzu-ink) !important;
+}
