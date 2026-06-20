@@ -14,16 +14,8 @@ import { onMounted, ref } from 'vue'
 const show = ref(false)
 
 onMounted(() => {
-  // 加载不蒜子脚本
-  if (typeof window !== 'undefined' && !(window as any)._busuanzi) {
-    const script = document.createElement('script')
-    script.src = 'https://busuanzi.ibruce.info/js'
-    script.async = true
-    script.onload = () => {
-      show.value = true
-    }
-    document.head.appendChild(script)
-  } else {
+  // 不蒜子已在 config.ts 中全局加载，这里只负责显示
+  if (typeof window !== 'undefined') {
     show.value = true
   }
 })

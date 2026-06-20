@@ -1,12 +1,11 @@
 <template>
   <div class="pagefind-search-wrapper">
     <input
-      ref="inputRef"
+      v-model="query"
       type="text"
       class="nav-search-input"
       placeholder="搜索..."
       @keydown.enter="doSearch"
-      @input="onInput"
     />
   </div>
 </template>
@@ -14,21 +13,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const inputRef = ref<HTMLInputElement | null>(null)
-let timer: ReturnType<typeof setTimeout>
-
-function onInput() {
-  clearTimeout(timer)
-  timer = setTimeout(() => {
-    const q = inputRef.value?.value.trim()
-    if (q) {
-      window.location.href = `/search/?q=${encodeURIComponent(q)}`
-    }
-  }, 600)
-}
+const query = ref('')
 
 function doSearch() {
-  const q = inputRef.value?.value.trim()
+  const q = query.value.trim()
   if (q) {
     window.location.href = `/search/?q=${encodeURIComponent(q)}`
   }

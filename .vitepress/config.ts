@@ -16,6 +16,9 @@ export default defineConfig({
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['meta', { name: 'theme-color', content: '#2C3E50' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+    
+    // 不蒜子阅读量统计
+    ['script', { src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async: true, defer: true }],
 
     // Open Graph 标签
     ['meta', { property: 'og:type', content: 'website' }],
@@ -72,7 +75,6 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vonmrs' },
-      { text: '公众号', link: 'https://mp.weixin.qq.com/', target: '_blank' },
     ],
 
     footer: {
