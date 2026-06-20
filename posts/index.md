@@ -6,9 +6,19 @@ title: 文章列表
 
 共 39 篇文章
 
-## 📐 棱镜 · 18 篇
+## 📐 棱镜 · 19 篇
 
 <div class="post-list">
+
+<a href="/posts/prism/prism-2026-05-31/" class="post-list-item">
+  <div>
+    <div class="post-meta">
+      <span class="post-category-badge prism">棱镜</span>
+      <span>2026-05-31</span>
+    </div>
+    <div class="post-title">AI圈本周集体高潮，但大部分还是PPT发布会</div>
+  </div>
+</a>
 
 <a href="/posts/prism/prism-2026-06-19/" class="post-list-item">
   <div>
@@ -393,22 +403,6 @@ title: 文章列表
       <span>2026-05-31</span>
     </div>
     <div class="post-title">2026年5月31日</div>
-  </div>
-</a>
-
-</div>
-
-## 🔥 毒舌 · 1 篇
-
-<div class="post-list">
-
-<a href="/posts/dushe/dushe-2026-05-31/" class="post-list-item">
-  <div>
-    <div class="post-meta">
-      <span class="post-category-badge dushe">毒舌</span>
-      <span>2026-05-31</span>
-    </div>
-    <div class="post-title">🗞️ 毒舌晚报</div>
   </div>
 </a>
 

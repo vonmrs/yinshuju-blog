@@ -576,11 +576,6 @@
   color: var(--inzu-gold);
 }
 
-.post-category-badge.dushe {
-  background: rgba(191, 59, 46, 0.15);
-  color: var(--inzu-seal);
-}
-
 @media (max-width: 640px) {
   .subscribe-section { grid-template-columns: 1fr; }
   .qrcode-row { flex-direction: column; }
