@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "docs": "vitepress dev .",
-    "build": "vitepress build .",
+    "build": "vitepress build . && pagefind --site .vitepress/dist --output-subdir pagefind",
     "preview": "vitepress preview ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "pagefind": "^1.5.2",
     "vitepress": "^1.6.4",
     "vue": "^3.5.38"
   },
