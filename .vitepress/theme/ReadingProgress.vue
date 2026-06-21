@@ -18,9 +18,9 @@ const showBackToTop = ref(false)
 function updateProgress() {
   const scrollTop = window.scrollY
   const docHeight = document.documentElement.scrollHeight - window.innerHeight
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
+  const currentProgress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
   
-  progress.value = Math.min(100, Math.max(0, progress))
+  progress.value = Math.min(100, Math.max(0, currentProgress))
   showBackToTop.value = scrollTop > 300
 }
 
