@@ -13,6 +13,15 @@ title: AI 工具集
 
 <div class="tools-grid">
 
+<div class="tool-card" onclick="location.href='/tools/md2word'">
+  <div class="tool-icon">📄</div>
+  <div class="tool-body">
+    <h3 class="tool-name">MD 转 Word</h3>
+    <p class="tool-desc">Markdown 一键转 Word 文档，支持标题/表格/代码块/列表</p>
+    <span class="tool-badge badge-active">在线使用</span>
+  </div>
+</div>
+
 <div class="tool-card">
   <div class="tool-icon">🖥️</div>
   <div class="tool-body">
@@ -182,5 +191,14 @@ title: AI 工具集
 .badge-planning {
   background: rgba(132, 125, 110, 0.15);
   color: var(--vp-c-text-2);
+}
+
+.badge-active {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+}
+
+.tool-card[onclick] {
+  cursor: pointer;
 }
 </style>
