@@ -73,9 +73,6 @@ export default defineConfig({
 
     sidebar: 'auto',
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vonmrs' },
-    ],
 
     outline: {
       level: [2, 3],

@@ -5,6 +5,7 @@
     </template>
     <template #nav-bar-content-after>
       <PagefindSearch />
+      <GitHubIcon />
     </template>
     <template #nav-screen-content-after>
       <a href="#" @click.prevent="toggleSearch" class="mobile-search-btn">搜索</a>
@@ -30,6 +31,7 @@ import SocialShare from './SocialShare.vue'
 import RelatedArticles from './RelatedArticles.vue'
 import ViewCount from './ViewCount.vue'
 import SiteFooter from './SiteFooter.vue'
+import GitHubIcon from './GitHubIcon.vue'
 import { ref } from 'vue'
 
 const { Layout } = DefaultTheme
