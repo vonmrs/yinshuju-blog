@@ -25,15 +25,15 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: '银枢局' }],
     ['meta', { property: 'og:title', content: ':title · 银枢局' }],
     ['meta', { property: 'og:description', content: ':description' }],
-    ['meta', { property: 'og:url', content: 'https://inzu.com.cn' }]
-    ['meta', { property: 'og:image', content: 'https://inzu.com.cn/logo/inzu-logo.png' }]
+    ['meta', { property: 'og:url', content: 'https://inzu.com.cn' }],
+    ['meta', { property: 'og:image', content: 'https://inzu.com.cn/logo/inzu-logo.png' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
 
     // Twitter Card 标签
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:title', content: ':title · 银枢局' }],
     ['meta', { name: 'twitter:description', content: ':description' }],
-    ['meta', { name: 'twitter:image', content: 'https://inzu.com.cn/logo/inzu-logo.png' }]
+    ['meta', { name: 'twitter:image', content: 'https://inzu.com.cn/logo/inzu-logo.png' }],
 
     // 结构化数据 (JSON-LD)
     ['script', { type: 'application/ld+json' }, `
@@ -46,7 +46,7 @@ export default defineConfig({
         "publisher": {
           "@type": "Organization",
           "name": "银枢局",
-          "logo": "https://blog.inzu.com.cn/logo/inzu-logo.png"
+          "logo": "https://inzu.com.cn/logo/inzu-logo.png"
         }
       }
     `],
