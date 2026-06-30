@@ -4,6 +4,7 @@ import Layout from './Layout.vue'
 import PostsList from './PostsList.vue'
 import SearchPage from './SearchPage.vue'
 import Md2Word from './Md2Word.vue'
+import SiteFooter from './SiteFooter.vue'
 import './style.css'
 
 export default {
@@ -14,5 +15,6 @@ export default {
     app.component('PostsList', PostsList)
     app.component('SearchPage', SearchPage)
     app.component('Md2Word', Md2Word)
+    app.component('SiteFooter', SiteFooter)
   },
 }

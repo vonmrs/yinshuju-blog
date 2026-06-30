@@ -15,6 +15,9 @@
       <RelatedArticles />
       <ViewCount />
     </template>
+    <template #layout-bottom>
+      <SiteFooter message="© 2026 银枢局 · Design · Code · Think" />
+    </template>
   </Layout>
 </template>
 
@@ -26,6 +29,7 @@ import ReadingProgress from './ReadingProgress.vue'
 import SocialShare from './SocialShare.vue'
 import RelatedArticles from './RelatedArticles.vue'
 import ViewCount from './ViewCount.vue'
+import SiteFooter from './SiteFooter.vue'
 import { ref } from 'vue'
 
 const { Layout } = DefaultTheme
