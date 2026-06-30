@@ -77,10 +77,6 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vonmrs' },
     ],
 
-    footer: {
-      message: '© 2026 银枢局 · Design · Code · Think',
-    },
-
     outline: {
       level: [2, 3],
       label: '目录',
