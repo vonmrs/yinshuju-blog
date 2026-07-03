@@ -9,6 +9,21 @@ title: AI 工具集
 
 ---
 
+## 🎬 AI 内容创作
+
+<div class="tools-grid">
+
+<div class="tool-card tool-card-featured" onclick="location.href='/tools/duanju/'">
+  <div class="tool-icon">🎬</div>
+  <div class="tool-body">
+    <h3 class="tool-name">剧能AI</h3>
+    <p class="tool-desc">短剧剧本一键生成 · 人物小传 + 分集大纲 + 逐集正文，含悬念钩子，直达付费解锁点</p>
+    <span class="tool-badge badge-new">NEW · 上线中</span>
+  </div>
+</div>
+
+</div>
+
 ## 🔧 开发工具
 
 <div class="tools-grid">
@@ -151,6 +166,17 @@ title: AI 工具集
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
+.tool-card.tool-card-featured {
+  background: rgba(201, 168, 76, 0.06);
+  border-color: rgba(201, 168, 76, 0.35);
+}
+
+.tool-card.tool-card-featured:hover {
+  border-color: var(--inzu-gold);
+  background: rgba(201, 168, 76, 0.1);
+  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.15);
+}
+
 .tool-icon {
   font-size: 1.8rem;
   line-height: 1;
@@ -196,6 +222,11 @@ title: AI 工具集
 .badge-active {
   background: rgba(76, 175, 80, 0.15);
   color: #4caf50;
+}
+
+.badge-new {
+  background: rgba(191, 59, 46, 0.15);
+  color: var(--inzu-seal, #BF3B2E);
 }
 
 .tool-card[onclick] {

@@ -6,6 +6,8 @@ import SearchPage from './SearchPage.vue'
 import Md2Word from './Md2Word.vue'
 import SiteFooter from './SiteFooter.vue'
 import GitHubIcon from './GitHubIcon.vue'
+import HtmlArticle from './HtmlArticle.vue'
+import DuanjuTool from '../components/DuanjuTool.vue'
 import './style.css'
 
 export default {
@@ -18,5 +20,7 @@ export default {
     app.component('Md2Word', Md2Word)
     app.component('SiteFooter', SiteFooter)
     app.component('GitHubIcon', GitHubIcon)
+    app.component('HtmlArticle', HtmlArticle)
+    app.component('DuanjuTool', DuanjuTool)
   },
 }
