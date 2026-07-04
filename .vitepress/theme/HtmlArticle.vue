@@ -26,12 +26,12 @@ const error = ref('')
 function getPath(filename) {
   if (filename.startsWith('/')) return filename
   if (filename.startsWith('zhaojian-')) {
-    return `/posts/zhaojian/${filename}`
+    return `/articles/zhaojian/${filename}`
   }
   if (filename.startsWith('prism-')) {
-    return `/posts/prism/${filename}`
+    return `/articles/prism/${filename}`
   }
-  return `/posts/${filename}`
+  return `/articles/${filename}`
 }
 
 onMounted(async () => {
