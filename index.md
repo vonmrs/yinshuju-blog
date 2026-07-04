@@ -169,7 +169,7 @@ onUnmounted(() => { clearInterval(interval) })
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  background: var(--inzu-parchment-dark);
+  background: var(--c-cr-bg);
   border: 1px solid var(--vp-c-divider);
   min-height: 380px;
 }
@@ -219,7 +219,7 @@ onUnmounted(() => { clearInterval(interval) })
   font-family: 'Noto Serif SC', serif !important;
   font-size: clamp(1.6rem, 3vw, 2.4rem) !important;
   font-weight: 900;
-  color: var(--inzu-silver-100) !important;
+  color: var(--c-cr-title) !important;
   margin: 0 0 0.8rem !important;
   line-height: 1.15 !important;
   border: none !important;
@@ -227,7 +227,7 @@ onUnmounted(() => { clearInterval(interval) })
 
 .slide-desc {
   font-size: 0.9rem;
-  color: var(--inzu-silver-500);
+  color: var(--c-cr-desc);
   line-height: 1.75;
   margin-bottom: 1.2rem;
   max-width: 480px;
@@ -242,11 +242,11 @@ onUnmounted(() => { clearInterval(interval) })
 
 .slide-meta span {
   font-size: 0.78rem;
-  color: var(--inzu-silver-500);
+  color: var(--c-cr-meta-text);
   padding: 0.2rem 0.6rem;
-  background: var(--inzu-parchment-mid);
+  background: var(--c-cr-meta-bg);
   border-radius: 4px;
-  border: 1px solid var(--vp-c-divider);
+  border: 1px solid var(--c-cr-meta-border);
 }
 
 .slide-cta {
@@ -265,11 +265,11 @@ onUnmounted(() => { clearInterval(interval) })
 }
 
 .slide-cta:hover {
-  background: #d4b357;
+  background: var(--c-cr-cta-hover-bg);
   transform: translateY(-1px);
   box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
   color: var(--inzu-ink);
-  border-color: #d4b357;
+  border-color: var(--c-cr-cta-hover-border);
 }
 
 /* ── 右侧预览卡 ── */
@@ -280,8 +280,8 @@ onUnmounted(() => { clearInterval(interval) })
 }
 
 .preview-card {
-  background: rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--c-cr-preview-bg);
+  border: 1px solid var(--c-cr-preview-border);
   border-radius: 14px;
   padding: 1.5rem;
   width: 100%;
@@ -291,7 +291,7 @@ onUnmounted(() => { clearInterval(interval) })
 
 .preview-label {
   font-size: 0.75rem;
-  color: #c9a020;
+  color: var(--c-cr-preview-label);
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -300,12 +300,12 @@ onUnmounted(() => { clearInterval(interval) })
 .preview-snippet {
   font-size: 0.82rem;
   line-height: 1.8;
-  color: rgba(240,236,226,0.6);
+  color: var(--c-cr-snippet);
 }
 
 .snippet-ep {
   font-family: 'Noto Serif SC', serif;
-  color: #f0c040;
+  color: var(--c-cr-ep);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
@@ -318,29 +318,29 @@ onUnmounted(() => { clearInterval(interval) })
 .snippet-hook {
   display: inline-block;
   padding: 4px 10px;
-  background: rgba(240,192,64,0.08);
-  border-left: 2px solid #f0c040;
+  background: var(--c-cr-hook-bg);
+  border-left: 2px solid var(--c-cr-hook-border);
   font-size: 0.78rem;
-  color: #c9a020;
+  color: var(--c-cr-hook-text);
 }
 
 .snippet-code {
   font-family: 'JetBrains Mono', monospace;
-  color: #f0ece2;
+  color: var(--c-cr-code);
   font-size: 0.82rem;
   margin-bottom: 0.3rem;
 }
 
 .snippet-code-dim {
-  color: rgba(240,236,226,0.4);
+  color: var(--c-cr-code-dim);
   font-size: 0.75rem;
 }
 
 .snippet-table {
   font-family: monospace;
   font-size: 0.75rem;
-  color: rgba(240,236,226,0.5);
-  background: rgba(255,255,255,0.03);
+  color: var(--c-cr-table);
+  background: var(--c-cr-table-bg);
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
   margin: 0.4rem 0;
@@ -357,24 +357,24 @@ onUnmounted(() => { clearInterval(interval) })
 .tag-b {
   font-size: 0.72rem;
   padding: 0.15rem 0.5rem;
-  background: rgba(240,192,64,0.12);
-  color: #c9a020;
+  background: var(--c-cr-tag-b-bg);
+  color: var(--c-cr-tag-b);
   border-radius: 4px;
 }
 
 .tag-s {
   font-size: 0.72rem;
   padding: 0.15rem 0.5rem;
-  background: rgba(90,141,163,0.15);
-  color: var(--inzu-jade);
+  background: var(--c-cr-tag-s-bg);
+  color: var(--c-cr-tag-s);
   border-radius: 4px;
 }
 
 .tag-e {
   font-size: 0.72rem;
   padding: 0.15rem 0.5rem;
-  background: rgba(76,175,80,0.12);
-  color: #4caf50;
+  background: var(--c-cr-tag-e-bg);
+  color: var(--c-cr-tag-e);
   border-radius: 4px;
 }
 
@@ -391,14 +391,14 @@ onUnmounted(() => { clearInterval(interval) })
   height: 8px;
   border-radius: 50%;
   border: none;
-  background: var(--vp-c-divider);
+  background: var(--c-cr-dot);
   cursor: pointer;
   transition: all 0.3s;
   padding: 0;
 }
 
 .dot.dot-active {
-  background: var(--inzu-gold);
+  background: var(--c-cr-dot-active);
   width: 24px;
   border-radius: 4px;
 }
@@ -409,60 +409,67 @@ onUnmounted(() => { clearInterval(interval) })
 </style>
 
 <style vars-provider>
-/* 亮色模式下轮播组件配色适配 */
+/* ── 暗色模式变量（默认） ── */
+:root {
+  --c-cr-bg: var(--inzu-parchment-dark);
+  --c-cr-title: var(--inzu-silver-100);
+  --c-cr-desc: var(--inzu-silver-500);
+  --c-cr-meta-bg: var(--inzu-parchment-mid);
+  --c-cr-meta-text: var(--inzu-silver-500);
+  --c-cr-meta-border: var(--vp-c-divider);
+  --c-cr-preview-bg: rgba(0,0,0,0.5);
+  --c-cr-preview-border: rgba(255,255,255,0.07);
+  --c-cr-preview-label: #c9a020;
+  --c-cr-snippet: rgba(240,236,226,0.6);
+  --c-cr-ep: #f0c040;
+  --c-cr-hook-bg: rgba(240,192,64,0.08);
+  --c-cr-hook-border: #f0c040;
+  --c-cr-hook-text: #c9a020;
+  --c-cr-code: #f0ece2;
+  --c-cr-code-dim: rgba(240,236,226,0.4);
+  --c-cr-table: rgba(240,236,226,0.5);
+  --c-cr-table-bg: rgba(255,255,255,0.03);
+  --c-cr-tag-b-bg: rgba(240,192,64,0.12);
+  --c-cr-tag-b: #c9a020;
+  --c-cr-tag-s-bg: rgba(90,141,163,0.15);
+  --c-cr-tag-s: var(--inzu-jade);
+  --c-cr-tag-e-bg: rgba(76,175,80,0.12);
+  --c-cr-tag-e: #4caf50;
+  --c-cr-dot: rgba(255,255,255,0.18);
+  --c-cr-dot-active: var(--inzu-gold);
+  --c-cr-cta-hover-bg: #d4b357;
+  --c-cr-cta-hover-border: #d4b357;
+}
+
+/* ── 亮色模式变量覆盖 ── */
 :root:not(.dark) {
-  /* 轮播容器在亮色下用浅暖灰背景 */
-  .tool-carousel {
-    background: rgba(240, 236, 226, 0.55);
-    border-color: rgba(201, 168, 76, 0.2);
-  }
-
-  /* 文字在亮色下用深色 */
-  .slide-title {
-    color: #1a1a1a !important;
-  }
-  .slide-desc {
-    color: rgba(0, 0, 0, 0.6);
-  }
-  .slide-meta span {
-    background: rgba(201, 168, 76, 0.1);
-    color: #8a6914;
-    border-color: rgba(201, 168, 76, 0.2);
-  }
-
-  /* 预览卡在亮色下用浅色背景 */
-  .preview-card {
-    background: rgba(255, 255, 255, 0.75);
-    border-color: rgba(201, 168, 76, 0.2);
-  }
-  .preview-snippet {
-    color: rgba(0, 0, 0, 0.6);
-  }
-  .snippet-ep {
-    color: #8a6914;
-  }
-
-  /* CTA 按钮在亮色下保持金色 */
-  .slide-cta {
-    background: #c9a848;
-    color: #fff;
-    border-color: #c9a848;
-  }
-  .slide-cta:hover {
-    background: #b8942f;
-    border-color: #b8942f;
-    color: #fff;
-  }
-
-  /* 指示器在亮色下用灰色点 */
-  .dot {
-    background: rgba(0, 0, 0, 0.18);
-  }
-  .dot.dot-active {
-    background: #c9a848;
-  }
-  .dot:hover {
-    background: rgba(0, 0, 0, 0.35);
-  }
+  --c-cr-bg: rgba(240, 236, 226, 0.6);
+  --c-cr-title: #1a1a1a;
+  --c-cr-desc: rgba(0, 0, 0, 0.6);
+  --c-cr-meta-bg: rgba(201, 168, 76, 0.1);
+  --c-cr-meta-text: #8a6914;
+  --c-cr-meta-border: rgba(201, 168, 76, 0.2);
+  --c-cr-preview-bg: rgba(255, 255, 255, 0.82);
+  --c-cr-preview-border: rgba(201, 168, 76, 0.25);
+  --c-cr-preview-label: #8a6914;
+  --c-cr-snippet: rgba(0, 0, 0, 0.6);
+  --c-cr-ep: #8a6914;
+  --c-cr-hook-bg: rgba(201, 168, 76, 0.08);
+  --c-cr-hook-border: #c9a020;
+  --c-cr-hook-text: #7a5910;
+  --c-cr-code: #333;
+  --c-cr-code-dim: rgba(0, 0, 0, 0.4);
+  --c-cr-table: rgba(0, 0, 0, 0.45);
+  --c-cr-table-bg: rgba(0, 0, 0, 0.04);
+  --c-cr-tag-b-bg: rgba(201, 168, 76, 0.12);
+  --c-cr-tag-b: #7a5910;
+  --c-cr-tag-s-bg: rgba(90, 141, 163, 0.12);
+  --c-cr-tag-s: #1a5276;
+  --c-cr-tag-e-bg: rgba(76, 175, 80, 0.1);
+  --c-cr-tag-e: #1e8449;
+  --c-cr-dot: rgba(0, 0, 0, 0.18);
+  --c-cr-dot-active: #c9a848;
+  --c-cr-cta-hover-bg: #b8942f;
+  --c-cr-cta-hover-border: #b8942f;
 }
 </style>
