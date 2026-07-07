@@ -63,6 +63,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 
+// [备案隐藏] 备案期间隐藏朝鉴新闻列表，备案成功后改为 false 即可恢复
+const HIDE_ZHAOJIAN = true
 const allPosts = ref<any[]>([])
 const filteredPosts = ref<any[]>([])
 const currentPage = ref(1)
@@ -71,11 +73,17 @@ const currentFilter = ref('all')
 const currentSort = ref('date-desc')
 const loading = ref(true)
 
-const filters = computed(() => [
-  { key: 'all', label: '全部', count: allPosts.value.length },
-  { key: 'prism', label: '📐 棱镜', count: allPosts.value.filter(p => p.category === 'prism').length },
-  { key: 'zhaojian', label: '🔭 朝鉴', count: allPosts.value.filter(p => p.category === 'zhaojian').length },
-])
+const filters = computed(() => {
+  const list = [
+    { key: 'all', label: '全部', count: allPosts.value.length },
+    { key: 'prism', label: '📐 棱镜', count: allPosts.value.filter(p => p.category === 'prism').length },
+  ]
+  // [备案隐藏] 不显示朝鉴筛选
+  if (!HIDE_ZHAOJIAN) {
+    list.push({ key: 'zhaojian', label: '🔭 朝鉴', count: allPosts.value.filter(p => p.category === 'zhaojian').length })
+  }
+  return list
+})
 
 const totalPages = computed(() => Math.ceil(filteredPosts.value.length / postsPerPage))
 
@@ -89,6 +97,10 @@ async function loadPosts() {
     const res = await fetch('/posts-meta.json?t=' + Date.now())
     if (!res.ok) throw new Error('HTTP ' + res.status)
     allPosts.value = await res.json()
+    // [备案隐藏] 过滤掉朝鉴文章
+    if (HIDE_ZHAOJIAN) {
+      allPosts.value = allPosts.value.filter(p => p.category !== 'zhaojian')
+    }
     filteredPosts.value = [...allPosts.value]
     loading.value = false
   } catch (e: any) {

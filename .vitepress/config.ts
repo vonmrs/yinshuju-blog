@@ -62,7 +62,7 @@ export default defineConfig({
         text: '内容',
         items: [
           { text: '📐 棱镜 · 技术', link: '/categories/prism' },
-          { text: '🔭 朝鉴 · 趋势洞察', link: '/categories/zhaojian' },
+          // [备案隐藏] 朝鉴新闻列表：{ text: '🔭 朝鉴 · 趋势洞察', link: '/categories/zhaojian' },
         ],
       },
       { text: '🛠️ AI工具', link: '/tools/' },
@@ -89,6 +89,12 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://blog.inzu.com.cn',
     outDir: '.vitepress/dist',
-    exclude: ['/404.html'],
+    // [备案隐藏] 排除朝鉴新闻列表与剧能AI工具页（VitePress 仅支持 transformItems 过滤）
+    transformItems(items) {
+      return items.filter((item) =>
+        !item.url.includes('categories/zhaojian') &&
+        !item.url.includes('tools/duanju')
+      )
+    },
   },
 })

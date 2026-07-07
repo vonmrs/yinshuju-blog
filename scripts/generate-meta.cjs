@@ -128,7 +128,10 @@ function generateMeta() {
   
   // 按日期排序（新的在前）
   meta.sort((a, b) => b.date.localeCompare(a.date))
-  return meta
+  // [备案隐藏] 生成阶段过滤掉朝鉴文章，避免数据接口暴露新闻列表
+  const HIDE_ZHAOJIAN = true
+  const filtered = HIDE_ZHAOJIAN ? meta.filter(p => p.category !== 'zhaojian') : meta
+  return filtered
 }
 
 function main() {

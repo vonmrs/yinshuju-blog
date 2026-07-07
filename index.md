@@ -19,11 +19,12 @@ features:
     details: 前端架构、后端设计、AI 工程化。透过代码看本质。
     link: /categories/prism
     linkText: 阅读技术文章
-  - icon: 🔭
-    title: 朝鉴 · 趋势洞察
-    details: 新闻背后的经济信号与机会窗口。每天一条，看懂趋势。
-    link: /categories/zhaojian
-    linkText: 探索趋势
+  # [备案隐藏] 朝鉴新闻列表入口
+  # - icon: 🔭
+  #   title: 朝鉴 · 趋势洞察
+  #   details: 新闻背后的经济信号与机会窗口。每天一条，看懂趋势。
+  #   link: /categories/zhaojian
+  #   linkText: 探索趋势
   - icon: 🛠️
     title: AI 工具集
     details: 银枢局出品的免费在线工具，让 AI 成为你的生产力杠杆。
@@ -35,7 +36,7 @@ features:
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const currentSlide = ref(0)
-const totalSlides = 2
+const totalSlides = 1
 let interval = null
 
 function goTo(idx) {
@@ -57,7 +58,7 @@ onUnmounted(() => { clearInterval(interval) })
 <div class="featured-tools">
 
 <div class="tool-carousel">
-  <!-- Slide 1: 剧能AI -->
+  <!-- [备案隐藏] 剧能AI 轮播 slide
   <div class="carousel-slide" :class="{ 'carousel-slide-active': currentSlide === 0 }">
     <div class="slide-inner">
       <div class="slide-text">
@@ -88,9 +89,10 @@ onUnmounted(() => { clearInterval(interval) })
       </div>
     </div>
   </div>
+  -->
 
   <!-- Slide 2: MD转Word -->
-  <div class="carousel-slide" :class="{ 'carousel-slide-active': currentSlide === 1 }">
+  <div class="carousel-slide" :class="{ 'carousel-slide-active': currentSlide === 0 }">
     <div class="slide-inner">
       <div class="slide-text">
         <div class="slide-tag">🔧 开发工具</div>
