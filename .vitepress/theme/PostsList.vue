@@ -63,8 +63,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 
-// [备案隐藏] 备案期间隐藏朝鉴新闻列表，备案成功后改为 false 即可恢复
-const HIDE_ZHAOJIAN = true
+// 恢复朝鉴新闻列表显示
+const HIDE_ZHAOJIAN = false
 const allPosts = ref<any[]>([])
 const filteredPosts = ref<any[]>([])
 const currentPage = ref(1)
