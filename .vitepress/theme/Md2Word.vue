@@ -36,6 +36,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { isAuthed, redirectToLogin } from './useAuth'
 
 const mdInput = ref('')
 const converting = ref(false)
@@ -139,6 +140,11 @@ function renderMarkdown(md: string): string {
 }
 
 async function convertToWord() {
+  // 网关：未关注公众号(未登录)则跳转登录页，关注后免费使用
+  if (!isAuthed()) {
+    redirectToLogin('/tools/md2word/')
+    return
+  }
   if (!mdInput.value.trim()) return
   converting.value = true
 

@@ -89,6 +89,12 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://blog.inzu.com.cn',
     outDir: '.vitepress/dist',
-  exclude: ['/404.html'],
+    transformItems(items) {
+      return items.filter((item) => {
+        const u = item.url || ''
+        // 此时 item.url 为相对路径(如 login/ 或 404.html，无 hostname)
+        return !/(?:^|\/)login\/?$/.test(u) && !/(?:^|\/)404\.html$/.test(u)
+      })
+    },
   },
 })

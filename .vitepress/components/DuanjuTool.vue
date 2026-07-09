@@ -15,7 +15,7 @@
         输入题材与设定，AI 自动生成完整短剧剧本——人物小传、分集大纲、逐集正文，含悬念钩子，直达付费解锁点。
       </p>
       <div class="dj-actions">
-        <button class="dj-btn dj-btn-primary" @click="scrollTo('dj-input')">🚀 免费生成第一集</button>
+        <button class="dj-btn dj-btn-primary" @click="freeStart">🚀 免费生成第一集</button>
         <button class="dj-btn dj-btn-ghost" @click="scrollTo('dj-pricing')">查看定价</button>
       </div>
     </section>
@@ -153,6 +153,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { isAuthed, redirectToLogin } from '../theme/useAuth'
 
 const mounted = ref(false)
 const topic = ref('霸总')
@@ -197,7 +198,21 @@ function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
+// 「免费生成第一集」入口：未关注公众号则先跳转登录
+function freeStart() {
+  if (!isAuthed()) {
+    redirectToLogin('/tools/duanju/')
+    return
+  }
+  scrollTo('dj-input')
+}
+
 function generate() {
+  // 网关：未关注公众号(未登录)则跳转登录页
+  if (!isAuthed()) {
+    redirectToLogin('/tools/duanju/')
+    return
+  }
   generating.value = true
   setTimeout(() => {
     result.value = DEMO_SCRIPTS[topic.value] || DEMO_SCRIPTS['霸总']
