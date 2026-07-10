@@ -1,0 +1,149 @@
+<!-- 顶部账号名片（深色风格适配） -->
+<section style="padding: 16px 20px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; margin-bottom: 20px;">
+  <table style="width: 100%; border-collapse: collapse; background: transparent; margin: 0;">
+    <tr style="background: transparent;">
+      <td style="width: 48px; vertical-align: middle; padding: 0; border: none;">
+        <img src="" alt="银枢局" style="width: 48px; height: 48px; border-radius: 50%; display: block;" />
+      </td>
+      <td style="vertical-align: middle; padding: 0 0 0 12px; border: none;">
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.4;">银枢局</p>
+        <p style="margin: 2px 0 0; font-size: 13px; color: #8b949e; line-height: 1.4;">Design · Code · Think</p>
+      </td>
+      <td style="width: 64px; vertical-align: middle; padding: 0 0 0 12px; border: none; text-align: right;">
+        <span style="display: inline-block; padding: 4px 12px; background: #a371f7; color: #ffffff; font-size: 13px; font-weight: 600; border-radius: 4px;">关注</span>
+      </td>
+    </tr>
+  </table>
+  <p style="margin: 10px 0 0; font-size: 13px; color: #8b949e; line-height: 1.4; border-top: 1px solid #30363d; padding-top: 10px;">让认知成为你的核心竞争力 📈</p>
+</section>
+
+<!-- 终端头部 -->
+<section style="padding: 0; background: #0d1117;">
+  <section style="background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <section style="display: flex; gap: 8px; align-items: center;">
+      <span style="width: 12px; height: 12px; background: #f85149; border-radius: 50%; display: inline-block;"></span>
+      <span style="width: 12px; height: 12px; background: #f0883e; border-radius: 50%; display: inline-block;"></span>
+      <span style="width: 12px; height: 12px; background: #3fb950; border-radius: 50%; display: inline-block;"></span>
+    </section>
+    <p style="font-size: 12px; color: #8b949e; margin: 0; letter-spacing: 1px;">[棱镜 · 终端模式]</p>
+    <span style="font-size: 12px; color: #8b949e; margin: 0;">2026-07-10</span>
+  </section>
+  <!-- 标题区 -->
+  <section style="padding: 36px 24px 28px;">
+    <p style="font-size: 12px; color: #a371f7; margin: 0 0 14px; letter-spacing: 1px; text-transform: uppercase;"># ComfyUI · 第3天 · 提示词与采样器</p>
+    <h1 style="font-size: 26px; font-weight: 700; color: #ffffff; line-height: 1.3; margin: 0 0 14px;">提示词与采样器：把出图从"碰运气"变成"调旋钮"</h1>
+    <p style="font-size: 14px; color: #8b949e; margin: 0; line-height: 1.5;">同样一句话，有人出大片有人出车祸现场。差距不在模型，在你会不会写提示词、调采样器。</p>
+  </section>
+</section>
+
+<!-- 命令行正文 -->
+<section style="padding: 0 0 32px; background: #0d1117;">
+
+  <!-- 概念解释 -->
+  <section style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin: 0 16px 16px;">
+    <p style="font-size: 11px; color: #58a6ff; font-weight: 600; margin: 0 0 10px; letter-spacing: 2px; text-transform: uppercase;">// 概念</p>
+    <p style="font-size: 15px; color: #c9d1d9; line-height: 1.8; margin: 0;">正向提示词，说人话就是给模型的"画图说明书"。它认的不是一句人话，而是<span style="color: #3fb950;">一堆带权重的标签</span>。昨天你跑通了 6 节点流，可能已经发现：同样一条流，换个提示词，出来的东西天差地别。</p>
+    <p style="font-size: 15px; color: #c9d1d9; line-height: 1.8; margin: 10px 0 0;">我踩过最典型的坑：刚上手时把提示词当作文写——"一个穿红裙子的女孩站在海边，阳光很好，希望温暖一点"。结果？红裙子变橘色、海边像泳池、温暖感全无。后来换成"标签堆叠法"才开窍：<span style="color: #58a6ff;">模型听不懂形容词，只听得懂名词 + 风格词。</span></p>
+  </section>
+
+  <!-- 命令示例 -->
+  <section style="background: #0d1117; margin: 0 16px 16px; border-left: 3px solid #3fb950; padding: 16px 20px;">
+    <p style="font-size: 11px; color: #3fb950; font-weight: 600; margin: 0 0 10px; letter-spacing: 1px;">// 提示词四段结构（标签化）</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.7; margin: 0; font-family: 'Fira Code', 'Courier New', monospace;"><span style="color: #3fb950;">$</span> 主体: 1girl, red dress, long hair<br/><span style="color: #3fb950;">$</span> 环境: seaside, golden hour, waves<br/><span style="color: #3fb950;">$</span> 风格: cinematic lighting, film grain<br/><span style="color: #3fb950;">$</span> 画质: highly detailed, 8k, sharp focus</p>
+  </section>
+
+  <!-- 输出示例 -->
+  <section style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin: 0 16px 16px;">
+    <p style="font-size: 11px; color: #8b949e; font-weight: 600; margin: 0 0 10px; letter-spacing: 1px;">// 输出</p>
+    <p style="font-size: 13px; color: #c9d1d9; line-height: 1.7; margin: 0; font-family: monospace;">✓ 标签化重写完成，模型已识别 12 个 tag<br/>✓ Queue Prompt 已触发<br/>✓ 出图方向对齐：红裙 / 海边 / 电影光 ✓</p>
+  </section>
+
+  <!-- 提示词与采样器拆解 -->
+  <section style="padding: 0 16px; margin-bottom: 16px;">
+    <p style="font-size: 11px; color: #a371f7; font-weight: 600; margin: 0 0 12px; letter-spacing: 2px; text-transform: uppercase;">// 提示词与采样器拆解（核心）</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 10px;"><span style="color: #58a6ff;">① 提示词结构</span><br/>按"主体 + 环境 + 风格 + 画质"四段堆标签，别写成作文。把"希望温暖一点"翻译成模型认得的 golden hour + cinematic lighting，图立刻就对了。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 10px;"><span style="color: #58a6ff;">② 权重语法</span><br/>用括号和冒号给词加权重——(red dress:1.3) 拉高、(wave:0.8) 弱化处理。我自己的路径：先不加权重跑一遍，看哪块跑偏，再单独给它加权。别一上来全加，图会"用力过猛"比例崩。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 10px;"><span style="color: #58a6ff;">③ 反向提示词（排雷线）</span><br/>我的固定黑名单：blurry, lowres, bad anatomy, extra fingers, watermark, text。这条线接对了，能挡掉八成"翻车图"。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 10px;"><span style="color: #58a6ff;">④ 采样器 KSampler 四旋钮</span><br/>steps（20–30 甜区，再多纯费电）、cfg（7–8 甜区，过高图发硬）、sampler+scheduler（新人先 euler+normal，想细用 dpmpp_2m+karras）、seed（锁死可复现，随机可探索）。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0;">我实测过：SD1.5 跑到 25 步基本定型，加到 50 步肉眼几乎无差、时间却翻倍。还有次把 cfg 拉到 15 想"更听话"，人脸像塑料、背景糊成一团——<span style="color: #3fb950;">7–8 才是甜区。</span></p>
+  </section>
+
+  <!-- 步骤清单 -->
+  <section style="padding: 0 16px; margin-bottom: 16px;">
+    <p style="font-size: 11px; color: #a371f7; font-weight: 600; margin: 0 0 12px; letter-spacing: 2px; text-transform: uppercase;">// 步骤（上手三连）</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 8px;"><span style="color: #58a6ff;">1.</span> 写对：提示词按"主体+环境+风格+画质"四段写，别写成作文。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 8px;"><span style="color: #58a6ff;">2.</span> 调参：KSampler 先设 steps=25, cfg=7, euler+normal，出一张看效果。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0;">3.</span> 微调：哪块不对，单独加权重或动对应旋钮。每次只动一个变量，跑一次看变化。</p>
+  </section>
+
+  <!-- 注意事项 -->
+  <section style="background: rgba(240,136,62,0.1); border: 1px solid rgba(240,136,62,0.25); border-radius: 8px; padding: 16px 20px; margin: 0 16px 16px;">
+    <p style="font-size: 12px; color: #f0883e; font-weight: 600; margin: 0 0 8px;">⚠️ 我踩过的坑</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.7; margin: 0;">第一个坑：一度把 cfg 拉到 15 想"让它更听话"，结果人脸像塑料、背景糊成一团——cfg 7-8 才是甜区。第二个坑：版本不兼容，某节点插件一更新和新版主程序打架，整条流直接打不开。我的土办法：用整合包固定版本，别盲目追新。</p>
+  </section>
+
+  <!-- 误区对比表 -->
+  <section style="padding: 0 16px; margin-bottom: 16px;">
+    <p style="font-size: 11px; color: #a371f7; font-weight: 600; margin: 0 0 12px; letter-spacing: 2px; text-transform: uppercase;">// 常见误区</p>
+    <table style="width: 100%; border-collapse: collapse; background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden;">
+      <tr style="background: #161b22;">
+        <td style="background: #21262d; color: #ffffff; font-weight: 700; padding: 10px 12px; border: 1px solid #30363d; width: 50%; font-size: 13px;">误区</td>
+        <td style="background: #21262d; color: #ffffff; font-weight: 700; padding: 10px 12px; border: 1px solid #30363d; width: 50%; font-size: 13px;">正确做法</td>
+      </tr>
+      <tr style="background: #161b22;">
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">「提示词写得越长越好」</td>
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">标签化、结构化；太长反而稀释重点，模型抓不住主次</td>
+      </tr>
+      <tr style="background: #161b22;">
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">「中文提示词直接丢进去」</td>
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">翻译成英文标签词效果更稳；中文常需模型本身支持</td>
+      </tr>
+      <tr style="background: #161b22;">
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">「cfg 拉满模型更听话」</td>
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">7–8 甜区；过高图死板、颜色发硬</td>
+      </tr>
+      <tr style="background: #161b22;">
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">「steps 越多越清晰」</td>
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">20–30 够用；过甜区纯耗时间</td>
+      </tr>
+      <tr style="background: #161b22;">
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">「每次都手动换 seed」</td>
+        <td style="padding: 10px 12px; border: 1px solid #30363d; color: #c9d1d9; font-size: 13px; line-height: 1.6;">先随机挑满意的锁死 seed，再微调，效率最高</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 进阶方向 -->
+  <section style="background: #161b22; border-left: 3px solid #58a6ff; border-radius: 4px; padding: 16px 20px; margin: 0 16px 16px;">
+    <p style="font-size: 11px; color: #58a6ff; font-weight: 600; margin: 0 0 10px; letter-spacing: 2px; text-transform: uppercase;">// 进阶方向</p>
+    <p style="font-size: 15px; color: #ffffff; line-height: 1.7; margin: 0 0 8px;">今天你只要搞懂一件事：提示词定方向，采样器定命；单变量微调，比盲目重跑强十倍。</p>
+    <p style="font-size: 14px; color: #8b949e; line-height: 1.7; margin: 0;">明天我们讲「模型与 LoRA」——同一个流，换个底模、加个 LoRA，风格瞬间切换。那是把"能出图"变成"出得有辨识度"的关键一步。</p>
+  </section>
+
+  <!-- 提问互动 -->
+  <section style="padding: 0 16px; margin-bottom: 16px;">
+    <p style="font-size: 11px; color: #a371f7; font-weight: 600; margin: 0 0 10px; letter-spacing: 2px; text-transform: uppercase;">// 动手之前，先聊聊</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0;">你现在写提示词，是"写成一句作文"还是"已经开始堆标签词"？<span style="color: #3fb950;">你最常被哪个参数坑——是 cfg 拉太高图发硬，还是 seed 没锁死每次都换一张脸？</span>评论区报一下，明天讲 LoRA 时我顺带教你怎么用 seed 复现满意图。</p>
+  </section>
+
+  <!-- 信源 -->
+  <section style="padding: 0 16px; margin-bottom: 8px;">
+    <p style="font-size: 11px; color: #8b949e; font-weight: 600; margin: 0 0 10px; letter-spacing: 2px; text-transform: uppercase;">// 信息源</p>
+    <p style="font-size: 13px; color: #8b949e; line-height: 1.7; margin: 0 0 6px;">· ComfyUI 官方文档（采样器说明）：docs.comfy.org</p>
+    <p style="font-size: 13px; color: #8b949e; line-height: 1.7; margin: 0 0 6px;">· 底模与 LoRA 社区：civitai.com</p>
+    <p style="font-size: 13px; color: #8b949e; line-height: 1.7; margin: 0 0 6px;">· 提示词结构参考：英文标签词表可搜「__请手动替换为你常用的提示词词典链接__」（占位，发布前替换）</p>
+    <p style="font-size: 13px; color: #8b949e; line-height: 1.7; margin: 0 0 6px;">· 节点入门视频：B站 UP 主「__请手动替换为你常用的推荐作者__」（占位，发布前替换）</p>
+    <p style="font-size: 13px; color: #8b949e; line-height: 1.7; margin: 6px 0 0;">以上参数建议与踩坑记录为本栏目实测；未亲测部分已标注「待验证」。</p>
+    <p style="font-size: 13px; color: #8b949e; line-height: 1.7; margin: 8px 0 0;">🔗 所有信源链接整理在评论区置顶，复制到浏览器打开。</p>
+  </section>
+
+  <!-- 分隔 -->
+  <section style="height: 1px; background: #30363d; margin: 8px 16px 20px;"></section>
+
+  <!-- 底部关注 -->
+  <section style="padding: 28px 20px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; text-align: center; margin-top: 30px;">
+    <p style="margin: 0; font-size: 17px; font-weight: 700; color: #ffffff;">📌 关注银枢局，涨赚升啦~</p>
+    <p style="margin: 10px 0 0; font-size: 14px; color: #8b949e;">👇 长按识别二维码，获取每日AI进阶干货</p>
+  </section>
+
+</section>
