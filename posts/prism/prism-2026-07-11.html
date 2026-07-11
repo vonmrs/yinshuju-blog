@@ -1,0 +1,86 @@
+<!-- 顶部账号名片 -->
+<section style="padding: 16px 20px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; margin-bottom: 20px;">
+  <table style="width: 100%; border-collapse: collapse; background: transparent; margin: 0;">
+    <tr style="background: transparent;">
+      <td style="width: 48px; vertical-align: middle; padding: 0; border: none;">
+        <img src="" alt="银枢局" style="width: 48px; height: 48px; border-radius: 50%; display: block;" />
+      </td>
+      <td style="vertical-align: middle; padding: 0 0 0 12px; border: none;">
+        <p style="margin: 0; font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.4;">银枢局</p>
+        <p style="margin: 2px 0 0; font-size: 13px; color: #8b949e; line-height: 1.4;">Design · Code · Think</p>
+      </td>
+      <td style="width: 64px; vertical-align: middle; padding: 0 0 0 12px; border: none; text-align: right;">
+        <span style="display: inline-block; padding: 4px 12px; background: #a371f7; color: #ffffff; font-size: 13px; font-weight: 600; border-radius: 4px;">关注</span>
+      </td>
+    </tr>
+  </table>
+  <p style="margin: 10px 0 0; font-size: 13px; color: #8b949e; line-height: 1.4; border-top: 1px solid #30363d; padding-top: 10px;">让认知成为你的核心竞争力 📈</p>
+</section>
+
+<!-- 终端头部 -->
+<section style="padding: 0; background: #0d1117;">
+  <section style="background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <section style="display: flex; gap: 8px; align-items: center;">
+      <span style="width: 12px; height: 12px; background: #f85149; border-radius: 50%; display: inline-block;"></span>
+      <span style="width: 12px; height: 12px; background: #f0883e; border-radius: 50%; display: inline-block;"></span>
+      <span style="width: 12px; height: 12px; background: #3fb950; border-radius: 50%; display: inline-block;"></span>
+    </section>
+    <p style="font-size: 12px; color: #8b949e; margin: 0; letter-spacing: 1px;">棱镜 · 终端模式</p>
+    <span style="font-size: 12px; color: #8b949e; margin: 0;">2026-07-11</span>
+  </section>
+  <!-- 标题区 -->
+  <section style="padding: 36px 24px 28px;">
+    <p style="font-size: 12px; color: #a371f7; margin: 0 0 14px; letter-spacing: 1px; text-transform: uppercase;"># ComfyUI · Day 4 · 参数调优</p>
+    <h1 style="font-size: 26px; font-weight: 700; color: #ffffff; line-height: 1.3; margin: 0 0 14px;">步数调高≠更清晰</h1>
+    <p style="font-size: 14px; color: #8b949e; margin: 0; line-height: 1.5;">KSampler 四个框，调错了图就糊、崩、慢——今天专治这三种病。</p>
+  </section>
+</section>
+
+<!-- 命令行正文 -->
+<section style="padding: 0 0 32px; background: #0d1117;">
+
+  <!-- 概念解释 -->
+  <section style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin: 0 16px 16px;">
+    <p style="font-size: 11px; color: #58a6ff; font-weight: 600; margin: 0 0 10px; letter-spacing: 2px; text-transform: uppercase;">// 概念</p>
+    <p style="font-size: 15px; color: #c9d1d9; line-height: 1.8; margin: 0;">把采样器想成"画家的笔法"：<span style="color: #ffffff;">采样器</span>决定怎么画，<span style="color: #ffffff;">步数</span>决定落几笔，<span style="color: #ffffff;">CFG</span>决定多听话。笔法不对，再描也救不回那张脸；画到第七笔已成型，后面再描就是来回涂改。</p>
+  </section>
+
+  <!-- 命令示例 -->
+  <section style="background: #0d1117; margin: 0 16px 16px; border-left: 3px solid #3fb950; padding: 16px 20px;">
+    <p style="font-size: 11px; color: #3fb950; font-weight: 600; margin: 0 0 10px; letter-spacing: 1px;">// 命令</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.6; margin: 0; font-family: 'Fira Code', 'Courier New', monospace;"><span style="color: #3fb950;">$</span> KSampler: sampler=DPM++ 2M Karras, scheduler=Karras, steps=28, cfg=7</p>
+  </section>
+
+  <!-- 输出示例 -->
+  <section style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin: 0 16px 16px;">
+    <p style="font-size: 11px; color: #8b949e; font-weight: 600; margin: 0 0 10px; letter-spacing: 1px;">// 输出</p>
+    <p style="font-size: 13px; color: #c9d1d9; line-height: 1.7; margin: 0; font-family: monospace;">✔ image saved — 28 steps, 3.2s on 4070Ti<br>✔ 细节干净，无塑料感，无灰雾</p>
+  </section>
+
+  <!-- 步骤清单 -->
+  <section style="padding: 0 16px; margin-bottom: 16px;">
+    <p style="font-size: 11px; color: #a371f7; font-weight: 600; margin: 0 0 12px; letter-spacing: 2px; text-transform: uppercase;">// 步骤</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 8px;"><span style="color: #58a6ff;">1.</span> SD1.5 底模：Euler a + steps 20-30 + CFG 7，新手最稳组合，不出错。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 8px;"><span style="color: #58a6ff;">2.</span> SDXL 底模：DPM++ 2M Karras + steps 25-35 + CFG 6-7，最省时省卡的搭配。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0 0 8px;"><span style="color: #58a6ff;">3.</span> scheduler 别乱动：Normal / Karras 二选一，Karras 收尾更干净。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.8; margin: 0;"><span style="color: #58a6ff;">4.</span> 显卡吃紧：步数砍到 20，换更快的采样器（如 UniPC），出图速度翻倍。</p>
+  </section>
+
+  <!-- 注意事项 -->
+  <section style="background: rgba(240,136,62,0.1); border: 1px solid rgba(240,136,62,0.25); border-radius: 8px; padding: 16px 20px; margin: 0 16px 16px;">
+    <p style="font-size: 12px; color: #f0883e; font-weight: 600; margin: 0 0 8px;">⚠️ 注意</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.7; margin: 0 0 8px;">误区：步数越多越清晰。正确做法：SDXL 在 20-35 步基本到顶，再往上收益递减甚至回退。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.7; margin: 0 0 8px;">误区：CFG 越高越符合提示词。正确做法：超过 10 画面开始僵硬过饱和，7 左右是甜点区。</p>
+    <p style="font-size: 14px; color: #c9d1d9; line-height: 1.7; margin: 0;">误区：采样器随便选。正确做法：写实人像认准 DPM++，动漫插画感用 Euler a。</p>
+  </section>
+
+  <!-- 分隔 -->
+  <section style="height: 1px; background: #30363d; margin: 8px 16px 20px;"></section>
+
+  <!-- 底部关注 -->
+  <section style="padding: 28px 20px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; text-align: center; margin-top: 30px;">
+    <p style="margin: 0; font-size: 17px; font-weight: 700; color: #ffffff;">📌 关注银枢局，涨赚升啦~</p>
+    <p style="margin: 10px 0 0; font-size: 14px; color: #8b949e;">👇 长按识别二维码，获取每日进阶干货</p>
+  </section>
+
+</section>
