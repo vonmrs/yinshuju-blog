@@ -32,12 +32,27 @@ export function clearAuth(): void {
   }
 }
 
+const WECHAT_ALBUM_URL =
+  'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=YOUR_WECHAT_BIZ_ID&scene=126#wechat_redirect'
+
+/**
+ * 朝鉴相关内容统一走微信，不走网站文章页。
+ * 避免回跳文章触发网关→登录→死循环。
+ */
+function isZhaojianPath(path: string): boolean {
+  return /^\/posts\/zhaojian(\/|$)/.test(path) ||
+         /^\/categories\/zhaojian(\/|$)/.test(path)
+}
+
 /** 解析登录页 ?redirect= 参数，返回要跳回的路径 */
 export function getRedirectTarget(fallback = '/'): string {
   if (typeof window === 'undefined') return fallback
   try {
     const p = new URLSearchParams(window.location.search).get('redirect')
-    return p && p.startsWith('/') ? p : fallback
+    const target = p && p.startsWith('/') ? p : fallback
+    // 朝鉴文章/列表一律跳微信，避免回跳触发网关死循环
+    if (isZhaojianPath(target)) return WECHAT_ALBUM_URL
+    return target
   } catch {
     return fallback
   }

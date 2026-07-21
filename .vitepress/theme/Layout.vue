@@ -32,11 +32,25 @@ import RelatedArticles from './RelatedArticles.vue'
 import ViewCount from './ViewCount.vue'
 import SiteFooter from './SiteFooter.vue'
 import GitHubIcon from './GitHubIcon.vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const { Layout } = DefaultTheme
 
 const showSearch = ref(false)
+
+// 朝鉴文章列表页 → 直接跳转微信公众号合集
+const WECHAT_ALBUM_REDIRECTS: Record<string, string> = {
+  '/posts/zhaojian/':
+    'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=BIZ_ID_PLACEHOLDER&scene=126#wechat_redirect',
+}
+
+function tryRedirect() {
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+  const dest = WECHAT_ALBUM_REDIRECTS[path]
+  if (dest) window.location.replace(dest)
+}
+
+onMounted(tryRedirect)
 
 const toggleSearch = () => {
   showSearch.value = !showSearch.value
