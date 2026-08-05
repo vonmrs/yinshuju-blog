@@ -96,11 +96,13 @@ export default defineConfig({
     },
   },
 
-  // 旧朝鉴分类页 → 重定向到朝鉴落地页（二维码页，浏览器/微信通用）
+  // 旧分类页 → 重定向（二维码落地页 / 文章列表页）
   transformHtml(html, id) {
     if (/\/categories\/zhaojian\.html$/.test(id)) {
-      const refreshTag = '<meta http-equiv="refresh" content="0;url=/posts/zhaojian/">'
-      return html.replace('</head>', `${refreshTag}</head>`)
+      return html.replace('</head>', '<meta http-equiv="refresh" content="0;url=/posts/zhaojian/"></head>')
+    }
+    if (/\/categories\/prism\.html$/.test(id)) {
+      return html.replace('</head>', '<meta http-equiv="refresh" content="0;url=/posts/"></head>')
     }
     return html
   },

@@ -190,7 +190,19 @@ html.dark {
 
 /* ===== 内容区域 ===== */
 .VPDoc .content {
-  max-width: 860px !important;
+  max-width: 100% !important;
+}
+
+/* ===== VPPage(layout: page) 居中容器统一样式 ===== */
+.VPPage .container,
+.VPDoc .content > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* 标题 */

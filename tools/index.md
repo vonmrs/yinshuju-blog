@@ -3,6 +3,17 @@ layout: page
 title: AI 工具集
 ---
 
+<div class="page-container">
+
+<PageBanner
+  :slides="[
+    { tag: '🎬 AI 内容创作', title: '剧能AI · 短剧剧本一键生成', desc: '输入题材与设定，AI 自动生成完整短剧剧本——人物小传、分集大纲、逐集正文，含悬念钩子，直达付费解锁点', cta: '立即体验', link: '/tools/duanju/' },
+    { tag: '🔧 开发工具', title: 'MD 转 Word · 无损转换', desc: 'Markdown 一键转 Word 文档，完整保留标题层级、表格、代码块、列表格式，无需手动调整格式', cta: '立即使用', link: '/tools/md2word/' }
+  ]"
+  banner-id="tools"
+  :interval="5000"
+/>
+
 # 🛠️ AI 工具集
 
 > 让 AI 成为你的生产力杠杆。这里是银枢局出品的小工具，全部免费使用。
@@ -141,6 +152,8 @@ title: AI 工具集
 ::: tip
 所有工具均为银枢局自建，不依赖第三方数据，安全隐私。
 :::
+
+</div>
 
 <style>
 .tools-grid {

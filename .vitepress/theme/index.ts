@@ -7,6 +7,7 @@ import Md2Word from './Md2Word.vue'
 import SiteFooter from './SiteFooter.vue'
 import GitHubIcon from './GitHubIcon.vue'
 import DuanjuTool from '../components/DuanjuTool.vue'
+import PageBanner from '../components/PageBanner.vue'
 import LoginGate from './LoginGate.vue'
 import ZhaojianGate from './ZhaojianGate.vue'
 import { isAuthed } from './useAuth'
@@ -23,6 +24,7 @@ export default {
     app.component('SiteFooter', SiteFooter)
     app.component('GitHubIcon', GitHubIcon)
     app.component('DuanjuTool', DuanjuTool)
+    app.component('PageBanner', PageBanner)
     app.component('LoginGate', LoginGate)
     app.component('ZhaojianGate', ZhaojianGate)
 
