@@ -17,12 +17,12 @@ features:
   - icon: 📐
     title: 棱镜 · 技术
     details: 前端架构、后端设计、AI 工程化。透过代码看本质。
-    link: /categories/prism
+    link: /posts/
     linkText: 阅读技术文章
   - icon: 🔭
     title: 朝鉴 · 趋势洞察
     details: 新闻背后的经济信号与机会窗口。每天一条，看懂趋势。
-    link: /posts/zhaojian/
+    link: /posts/
     linkText: 前往公众号
   - icon: 🛠️
     title: AI 工具集

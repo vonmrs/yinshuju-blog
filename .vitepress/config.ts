@@ -61,8 +61,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '文章', link: '/posts/' },
-      { text: '🔭 朝鉴', link: '/posts/zhaojian/' },
+      { text: '🔭 朝鉴', link: '/posts/' },
       { text: '🛠️ AI工具', link: '/tools/' },
       { text: '📱 订阅', link: '/subscribe/' },
       { text: '搜索', link: '/search/' },
