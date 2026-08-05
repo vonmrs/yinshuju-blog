@@ -1,9 +1,47 @@
 <template>
-  <div id="article-list-app">
-    <!-- 统计和工具栏 -->
-    <div class="toolbar">
-      <!-- 文章列表筛选 / 分类入口 -->
-      <div class="filter-group">
+  <div id="article-list-app" class="list-layout">
+    <!-- 主栏：文章列表 -->
+    <div class="list-main">
+      <div class="articles-container">
+        <template v-if="loading">
+          <p>加载中...</p>
+        </template>
+        <template v-else-if="pagePosts.length === 0">
+          <div class="empty-state"><p>暂无符合条件的文章</p></div>
+        </template>
+        <template v-else>
+          <a
+            v-for="post in pagePosts"
+            :key="post.url"
+            :href="post.url"
+            class="article-card"
+          >
+            <div class="article-meta">
+              <span class="article-badge" :class="post.category === 'prism' ? 'badge-prism' : 'badge-zhaojian'">
+                {{ post.category === 'prism' ? '棱镜' : '朝鉴' }}
+              </span>
+              <span class="article-date">{{ formatDate(post.date) }}</span>
+            </div>
+            <div class="article-title">{{ post.title }}</div>
+            <div class="article-excerpt">{{ post.excerpt ? post.excerpt.substring(0, 100) + '...' : '' }}</div>
+          </a>
+        </template>
+      </div>
+
+      <!-- 分页 -->
+      <div class="pagination-app">
+        <button :disabled="currentPage <= 1" @click="goToPage(1)">«</button>
+        <button :disabled="currentPage <= 1" @click="goToPage(currentPage - 1)">‹</button>
+        <span class="page-info">{{ currentPage }} / {{ totalPages }}</span>
+        <button :disabled="currentPage >= totalPages" @click="goToPage(currentPage + 1)">›</button>
+        <button :disabled="currentPage >= totalPages" @click="goToPage(totalPages)">»</button>
+      </div>
+    </div>
+
+    <!-- 右侧目录：筛选 + 排序 -->
+    <aside class="list-catalog">
+      <h2 class="catalog-title">📝 全部文章</h2>
+      <div class="filter-group catalog-filters">
         <template v-for="filter in filters" :key="filter.key">
           <a
             v-if="filter.link"
@@ -11,7 +49,7 @@
             class="filter-btn filter-link"
             target="_blank"
             rel="noopener"
-          >{{ filter.label }} ↗</a>
+          >{{ filter.label }}</a>
           <button
             v-else
             class="filter-btn"
@@ -22,50 +60,15 @@
           </button>
         </template>
       </div>
-      <div class="sort-group">
+      <div class="sort-group catalog-sort">
+        <label class="sort-label">排序</label>
         <select v-model="currentSort" class="sort-select" @change="currentPage = 1; renderPosts()">
           <option value="date-desc">最新</option>
           <option value="date-asc">最早</option>
           <option value="title-asc">标题 A-Z</option>
         </select>
       </div>
-    </div>
-
-    <!-- 文章列表容器 -->
-    <div class="articles-container">
-      <template v-if="loading">
-        <p>加载中...</p>
-      </template>
-      <template v-else-if="pagePosts.length === 0">
-        <div class="empty-state"><p>暂无符合条件的文章</p></div>
-      </template>
-      <template v-else>
-        <a
-          v-for="post in pagePosts"
-          :key="post.url"
-          :href="post.url"
-          class="article-card"
-        >
-          <div class="article-meta">
-            <span class="article-badge" :class="post.category === 'prism' ? 'badge-prism' : 'badge-zhaojian'">
-              {{ post.category === 'prism' ? '棱镜' : '朝鉴' }}
-            </span>
-            <span class="article-date">{{ formatDate(post.date) }}</span>
-          </div>
-          <div class="article-title">{{ post.title }}</div>
-          <div class="article-excerpt">{{ post.excerpt ? post.excerpt.substring(0, 100) + '...' : '' }}</div>
-        </a>
-      </template>
-    </div>
-
-    <!-- 分页 -->
-    <div class="pagination-app">
-      <button :disabled="currentPage <= 1" @click="goToPage(1)">«</button>
-      <button :disabled="currentPage <= 1" @click="goToPage(currentPage - 1)">‹</button>
-      <span class="page-info">{{ currentPage }} / {{ totalPages }}</span>
-      <button :disabled="currentPage >= totalPages" @click="goToPage(currentPage + 1)">›</button>
-      <button :disabled="currentPage >= totalPages" @click="goToPage(totalPages)">»</button>
-    </div>
+    </aside>
   </div>
 </template>
 
@@ -165,49 +168,60 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.toolbar {
+.list-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 248px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.list-main {
+  min-width: 0;
+}
+
+/* 右侧目录（筛选 + 排序） */
+.list-catalog {
+  position: sticky;
+  top: calc(var(--vp-nav-height, 60px) + 16px);
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.catalog-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 0 0 1rem;
+}
+.catalog-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.catalog-filters .filter-btn {
+  width: 100%;
+  text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
 }
-
-.filter-group {
+.catalog-sort {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--vp-c-divider);
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  flex-wrap: wrap;
 }
-
-.filter-btn {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  cursor: pointer;
-  transition: all 0.2s;
-  font-size: 0.85rem;
+.sort-label {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
 }
-
-.filter-btn:hover,
-.filter-btn.active {
-  border-color: var(--inzu-gold);
-  color: var(--inzu-gold);
-}
-
-.sort-select {
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  font-size: 0.85rem;
-}
-
-.filter-link {
-  text-decoration: none;
+.catalog-sort .sort-select {
+  width: 100%;
 }
 
 .articles-container {
@@ -317,11 +331,51 @@ onMounted(() => {
   padding: 0 0.5rem;
 }
 
+.filter-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--inzu-gold);
+  color: var(--inzu-gold);
+}
+
+.sort-select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+}
+
+.filter-link {
+  text-decoration: none;
+}
+
 :root:not(.dark) .article-card {
   background: var(--vp-c-bg-elv);
 }
 
 :root:not(.dark) .article-title {
   color: var(--inzu-ink);
+}
+
+@media (max-width: 960px) {
+  .list-layout {
+    grid-template-columns: 1fr;
+  }
+  .list-catalog {
+    position: static;
+    order: -1;
+  }
 }
 </style>
