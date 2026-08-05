@@ -22,11 +22,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { WECHAT_PROFILE_URL } from './wechat'
 
-// ⚠️ 把 YOUR_WECHAT_BIZ_ID 替换为真实的微信公众号 __biz 值
 // 该链接仅在微信客户端内可打开；浏览器中通过二维码(微信扫码)跳转。
-const WECHAT_TARGET =
-  'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=YOUR_WECHAT_BIZ_ID&scene=126#wechat_redirect'
+const WECHAT_TARGET = WECHAT_PROFILE_URL
 
 const qrEl = ref<HTMLElement | null>(null)
 const inWechat = ref(false)

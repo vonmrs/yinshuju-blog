@@ -1,5 +1,9 @@
 import { defineConfig } from 'vitepress'
 
+// 微信公众号配置（朝鉴落地页二维码 / 微信内跳转）
+// 真实定义见 .vitepress/theme/wechat.ts —— 换公众号只改那一处
+export { WECHAT_BIZ_ID, WECHAT_PROFILE_URL } from './theme/wechat'
+
 export default defineConfig({
   lang: 'zh-CN',
   title: '银枢局',
