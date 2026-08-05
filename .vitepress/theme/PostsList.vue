@@ -2,16 +2,25 @@
   <div id="article-list-app">
     <!-- 统计和工具栏 -->
     <div class="toolbar">
+      <!-- 文章列表筛选 / 分类入口 -->
       <div class="filter-group">
-        <button
-          v-for="filter in filters"
-          :key="filter.key"
-          class="filter-btn"
-          :class="{ active: currentFilter === filter.key }"
-          @click="applyFilter(filter.key)"
-        >
-          {{ filter.label }} ({{ filter.count }})
-        </button>
+        <template v-for="filter in filters" :key="filter.key">
+          <a
+            v-if="filter.link"
+            :href="filter.link"
+            class="filter-btn filter-link"
+            target="_blank"
+            rel="noopener"
+          >{{ filter.label }} ↗</a>
+          <button
+            v-else
+            class="filter-btn"
+            :class="{ active: currentFilter === filter.key }"
+            @click="applyFilter(filter.key)"
+          >
+            {{ filter.label }} ({{ filter.count }})
+          </button>
+        </template>
       </div>
       <div class="sort-group">
         <select v-model="currentSort" class="sort-select" @change="currentPage = 1; renderPosts()">
@@ -78,9 +87,9 @@ const filters = computed(() => {
     { key: 'all', label: '全部', count: allPosts.value.length },
     { key: 'prism', label: '📐 棱镜', count: allPosts.value.filter(p => p.category === 'prism').length },
   ]
-  // [备案隐藏] 不显示朝鉴筛选
+  // [朝鉴] 以链接形式指向公众号二维码落地页(文章已移至微信)
   if (!HIDE_ZHAOJIAN) {
-    list.push({ key: 'zhaojian', label: '🔭 朝鉴', count: allPosts.value.filter(p => p.category === 'zhaojian').length })
+    list.push({ key: 'zhaojian', label: '🔭 朝鉴', link: '/posts/zhaojian/' })
   }
   return list
 })
@@ -195,6 +204,10 @@ onMounted(() => {
   background: var(--vp-c-bg);
   color: var(--vp-c-text-2);
   font-size: 0.85rem;
+}
+
+.filter-link {
+  text-decoration: none;
 }
 
 .articles-container {
