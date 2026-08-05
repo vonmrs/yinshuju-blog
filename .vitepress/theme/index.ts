@@ -8,6 +8,7 @@ import SiteFooter from './SiteFooter.vue'
 import GitHubIcon from './GitHubIcon.vue'
 import DuanjuTool from '../components/DuanjuTool.vue'
 import LoginGate from './LoginGate.vue'
+import ZhaojianGate from './ZhaojianGate.vue'
 import { isAuthed } from './useAuth'
 import './style.css'
 
@@ -23,6 +24,7 @@ export default {
     app.component('GitHubIcon', GitHubIcon)
     app.component('DuanjuTool', DuanjuTool)
     app.component('LoginGate', LoginGate)
+    app.component('ZhaojianGate', ZhaojianGate)
 
     // 文章详情页网关：未登录(未关注)则跳转登录页
     // VitePress Router 提供 onBeforeRouteChange(href) => boolean，返回 false 取消导航

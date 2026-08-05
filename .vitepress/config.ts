@@ -62,7 +62,7 @@ export default defineConfig({
         text: '内容',
         items: [
           { text: '📐 棱镜 · 技术', link: '/categories/prism' },
-          { text: '🔭 朝鉴 · 趋势洞察', link: 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=YOUR_WECHAT_BIZ_ID&scene=126#wechat_redirect' },
+          { text: '🔭 朝鉴 · 趋势洞察', link: '/posts/zhaojian/' },
         ],
       },
       { text: '🛠️ AI工具', link: '/tools/' },
@@ -98,14 +98,12 @@ export default defineConfig({
     },
   },
 
-  // SSR 级页面重定向（服务端直接返回含 meta refresh 的 HTML，浏览器立即跳转，无 flash）
+  // 旧朝鉴分类页 → 重定向到朝鉴落地页（二维码页，浏览器/微信通用）
   transformHtml(html, id) {
-    const bizId = 'YOUR_WECHAT_BIZ_ID'
-    const dest = `https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=${bizId}&scene=126#wechat_redirect`
-    const refreshTag = `<meta http-equiv="refresh" content="0;url=${dest}">`
-    // 匹配 /posts/zhaojian/ 列表页 和 /categories/zhaojian 分类页
-    const isZhaojianList = /\/(posts\/zhaojian\/index|categories\/zhaojian)\.html$/.test(id)
-    if (!isZhaojianList) return
-    return html.replace('</head>', `${refreshTag}</head>`)
+    if (/\/categories\/zhaojian\.html$/.test(id)) {
+      const refreshTag = '<meta http-equiv="refresh" content="0;url=/posts/zhaojian/">'
+      return html.replace('</head>', `${refreshTag}</head>`)
+    }
+    return html
   },
 })

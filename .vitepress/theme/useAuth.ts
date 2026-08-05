@@ -32,8 +32,7 @@ export function clearAuth(): void {
   }
 }
 
-const WECHAT_ALBUM_URL =
-  'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=YOUR_WECHAT_BIZ_ID&scene=126#wechat_redirect'
+const ZHAOJIAN_LANDING = '/posts/zhaojian/'
 
 /**
  * 朝鉴相关内容统一走微信，不走网站文章页。
@@ -50,8 +49,8 @@ export function getRedirectTarget(fallback = '/'): string {
   try {
     const p = new URLSearchParams(window.location.search).get('redirect')
     const target = p && p.startsWith('/') ? p : fallback
-    // 朝鉴文章/列表一律跳微信，避免回跳触发网关死循环
-    if (isZhaojianPath(target)) return WECHAT_ALBUM_URL
+    // 朝鉴文章/列表一律跳朝鉴落地页(二维码页)，避免回跳触发网关死循环
+    if (isZhaojianPath(target)) return ZHAOJIAN_LANDING
     return target
   } catch {
     return fallback

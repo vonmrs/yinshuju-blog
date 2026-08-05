@@ -22,8 +22,8 @@ features:
   - icon: 🔭
     title: 朝鉴 · 趋势洞察
     details: 新闻背后的经济信号与机会窗口。每天一条，看懂趋势。
-    link: https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=YOUR_WECHAT_BIZ_ID&scene=126#wechat_redirect
-    linkText: 探索趋势
+    link: /posts/zhaojian/
+    linkText: 前往公众号
   - icon: 🛠️
     title: AI 工具集
     details: 银枢局出品的免费在线工具，让 AI 成为你的生产力杠杆。
