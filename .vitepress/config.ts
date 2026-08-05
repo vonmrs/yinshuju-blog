@@ -63,6 +63,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '🔭 棱镜', link: '/posts/' },
       { text: '🔭 朝鉴', link: '/posts/zhaojian/' },
+      { text: '📝 PenPulse', link: 'https://penpulse.inzu.com.cn/', external: true },
       { text: '🛠️ AI工具', link: '/tools/' },
       { text: '📱 订阅', link: '/subscribe/' },
       { text: '搜索', link: '/search/' },

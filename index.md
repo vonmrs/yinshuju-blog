@@ -28,7 +28,12 @@ features:
     title: AI 工具集
     details: 银枢局出品的免费在线工具，让 AI 成为你的生产力杠杆。
     link: /tools/
-    linkText: 使用工具
+    linkText: 立即体验
+  - icon: 📝
+    title: PenPulse · 内容自动化
+    details: 从选题到发布，全链路内容生产平台。支持多平台定时发布、数据回传、AI 批量润色。
+    link: https://penpulse.inzu.com.cn/
+    linkText: 立即使用
 ---
 
 <script setup>
