@@ -29,7 +29,6 @@ const slides = computed(() => {
   if (p === '/posts') {
     return [
       { tag: '📐 棱镜', title: '技术深度 · 认知升级', desc: '全栈技术 · 产品思维 · AI工具 · 职场成长', cta: '浏览全文', link: '/posts/' },
-      { tag: '🔭 朝鉴', title: '荆州本地 · 经济洞察', desc: '荆州 news · 政策解读 · 项目机会 · 消费趋势', cta: '了解更多', link: '/posts/zhaojian/' },
     ]
   }
   if (p === '/tools') {
@@ -40,7 +39,7 @@ const slides = computed(() => {
   }
   if (/^\/posts\/zhaojian$/.test(p)) {
     return [
-      { tag: '🔭 朝鉴', title: '荆州本地 · 经济洞察', desc: '荆州 news · 政策解读 · 项目机会 · 消费趋势 —— 银枢局出品', cta: '了解更多', link: '/posts/' },
+      { tag: '🔭 朝鉴', title: '荆州本地 · 经济洞察', desc: '荆州 news · 政策解读 · 项目机会 · 消费趋势 —— 银枢局出品', cta: '了解更多', link: '/posts/zhaojian/' },
     ]
   }
   return []

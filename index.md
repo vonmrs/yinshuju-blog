@@ -22,7 +22,7 @@ features:
   - icon: 🔭
     title: 朝鉴 · 趋势洞察
     details: 新闻背后的经济信号与机会窗口。每天一条，看懂趋势。
-    link: /posts/
+    link: /posts/zhaojian/
     linkText: 前往公众号
   - icon: 🛠️
     title: AI 工具集
