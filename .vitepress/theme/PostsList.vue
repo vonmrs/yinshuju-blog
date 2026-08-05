@@ -1,5 +1,36 @@
 <template>
   <div id="article-list-app" class="list-main">
+    <!-- 顶部工具条：筛选 + 排序 -->
+    <div class="list-toolbar">
+      <div class="filter-group toolbar-filters">
+        <template v-for="filter in filters" :key="filter.key">
+          <a
+            v-if="filter.link"
+            :href="filter.link"
+            class="filter-btn filter-link"
+            target="_blank"
+            rel="noopener"
+          >{{ filter.label }}</a>
+          <button
+            v-else
+            class="filter-btn"
+            :class="{ active: currentFilter === filter.key }"
+            @click="applyFilter(filter.key)"
+          >
+            {{ filter.label }}<span v-if="!loading"> ({{ filter.count }})</span>
+          </button>
+        </template>
+      </div>
+      <div class="sort-group toolbar-sort">
+        <label class="sort-label">排序</label>
+        <select v-model="currentSort" class="sort-select" @change="currentPage = 1; renderPosts()">
+          <option value="date-desc">最新</option>
+          <option value="date-asc">最早</option>
+          <option value="title-asc">标题 A-Z</option>
+        </select>
+      </div>
+    </div>
+
     <div class="articles-container">
       <template v-if="loading">
         <p>加载中...</p>
@@ -49,12 +80,77 @@ const {
   goToPage,
   formatDate,
   loadPosts,
+  filters,
+  currentFilter,
+  currentSort,
+  applyFilter,
+  renderPosts,
 } = usePostsData()
 
 onMounted(loadPosts)
 </script>
 
 <style scoped>
+.list-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.toolbar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-label {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-3);
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--inzu-gold);
+  color: var(--inzu-gold);
+}
+
+.filter-link {
+  text-decoration: none;
+}
+
 .articles-container {
   display: flex;
   flex-direction: column;
@@ -168,5 +264,18 @@ onMounted(loadPosts)
 
 :root:not(.dark) .article-title {
   color: var(--inzu-ink);
+}
+
+@media (max-width: 640px) {
+  .list-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .toolbar-sort {
+    justify-content: space-between;
+  }
+  .toolbar-sort .sort-select {
+    flex: 1;
+  }
 }
 </style>

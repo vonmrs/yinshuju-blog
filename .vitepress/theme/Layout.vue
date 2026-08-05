@@ -53,11 +53,6 @@
     <template #layout-bottom>
       <SiteFooter message="© 2026 银枢局 · Design · Code · Think" />
     </template>
-
-    <!-- 文章列表页：右侧 aside 顶部渲染筛选/排序目录 -->
-    <template #aside-top>
-      <ListCatalog v-if="isPostsList" />
-    </template>
   </Layout>
 </template>
 
@@ -73,7 +68,6 @@ import RelatedArticles from './RelatedArticles.vue'
 import ViewCount from './ViewCount.vue'
 import SiteFooter from './SiteFooter.vue'
 import GitHubIcon from './GitHubIcon.vue'
-import ListCatalog from './ListCatalog.vue'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
@@ -87,9 +81,6 @@ const pagerReady = ref(false)
 const isArticle = computed(() =>
   /^\/posts\/(prism|zhaojian)\/[^/]+\/?$/.test(route.path)
 )
-
-// 仅文章列表页(/posts/)在右侧 aside 渲染筛选目录
-const isPostsList = computed(() => route.path.replace(/\/+$/, '') === '/posts')
 
 const category = computed(
   () => frontmatter.value.categories?.[0] || frontmatter.value.category

@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 // 恢复朝鉴新闻列表显示
 const HIDE_ZHAOJIAN = false
 
-// 模块级单例：文章列表页(PostsList 网格) 与 右侧目录(ListCatalog) 共享同一份状态
+// 模块级单例：文章列表页(PostsList 网格 + 顶部工具条) 共享同一份状态
 const allPosts = ref<any[]>([])
 const filteredPosts = ref<any[]>([])
 const currentPage = ref(1)
